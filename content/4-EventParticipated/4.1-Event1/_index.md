@@ -6,121 +6,131 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
 
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+
+# Summary Report: “Event CD AWS”
+
 
 ### Event Objectives
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
-
+* Share practical knowledge, skills, and real-world experiences from industry speakers
+* Create opportunities for networking, discussion, and idea exchange among participants
+* Provide valuable insights to support learning and professional development
+* Inspire attendees through practical stories and lessons learned from real projects
 ### Speakers
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+- **Huynh Thai Linh** – FCAJ
+- **Huynh An Khuong - Mai Quoc Anh - Nguyen Tran Minh Quan** - FCAJ Challenger
+- **Nguyen Thi Quynh Nhu** – FCAJ
+- **Nghia Tran** - FCAJ
+- **Tran Minh Quan** - FCAJ
+- **Khac Uy Pham** - FCAJ
 
 ### Key Highlights
 
-#### Identifying the drawbacks of legacy application architecture
+#### Topic 1: Level Up Your AWS Skills with Cloud Quest and FLoCI
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
+##### 1. The Challenges of Learning AWS Hands-on
 
-#### Transitioning to modern application architecture – Microservices
+* Understanding common challenges faced by students when learning AWS through practical experience.
+* Identifying barriers between theoretical knowledge and real-world cloud implementation.
+* Exploring the importance of hands-on learning in developing cloud skills.
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+##### 2. AWS Cloud Quest
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+* Introduction to AWS Cloud Quest as a hands-on and interactive learning platform.
+* Learning AWS concepts through practical challenges and real-world scenarios.
+* Building cloud knowledge through experiential learning rather than theory alone.
 
-#### Domain-Driven Design (DDD)
+##### 3. Open Source FLoCI
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
+* Overview of FLoCI as an open-source initiative for cloud learning and collaboration.
+* Opportunities for students to engage with the cloud community and learning resources.
+* Encouraging knowledge sharing and practical skill development through open-source contributions.
 
-#### Event-Driven Architecture
+##### 4. Combining Cloud Quest and FLoCI Effectively
 
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
+* Leveraging Cloud Quest for structured hands-on AWS learning.
+* Using FLoCI to extend learning through community engagement and collaboration.
+* Creating a balanced learning path that combines guided practice with real-world experience.
+* Maximizing cloud skill development through both platforms.
 
-#### Compute Evolution
+#### Topic 2: Hackathon – A Tons of Fun, Bug Fixes, and Learning Experiences
 
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
+* Understanding Hackathons
+* Learning Through Practice
+* Building Portfolio Projects
+* Gaining Real-World Experience
+#### Topic 3: Why It's a "Must-Have" for Our Careers, Campus Life, and Everything in Between.
 
-#### Amazon Q Developer
+##### 1. Let's Talk Confidence
 
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
+* Understanding what confidence is
+* Why confidence matters in daily life
 
-### Key Takeaways
+##### 2. The Cost of Self-Doubt in Student Life
 
-#### Design Mindset
+* Impact of self-doubt on learning and opportunities
+* Common challenges faced by students
 
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
+##### 3. The Science Behind the Struggle
 
-#### Technical Architecture
+* Psychological factors affecting confidence
+* Understanding the roots of self-doubt
 
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
+##### 4. The Power of Confidence – Why It's Essential
 
-#### Modernization Strategy
+* Benefits of confidence in academics and careers
+* Building resilience and personal growth
 
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
+##### 5. How to "Hack" Everyday Confidence
 
-### Applying to Work
+* Practical strategies for building confidence
+* Small habits that create lasting improvement
 
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
+##### 6. Wrap-up
 
-### Event Experience
+* Key lessons and takeaways
+#### Topic 4: Tu Vi Dai Viet
 
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
+##### 1. Product Introduction
 
-#### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
+* Decoding destiny
+* Understanding your inner self
 
-#### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
+##### 2. Exploring Astrology Insights
 
-#### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
+* Discovering the secrets of the universe
+* Understanding how energy from constellations affects life
 
-#### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
+##### 3. AI-Powered Experience
 
-#### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
+* Generated by AI
+* View along with suggested advice
+#### Topic 5: The Hidden Iceberg of a Project – DevOps Before Disaster
+
+* Hidden challenges in software projects
+* The role of DevOps in preventing failures
+* Identifying risks before they become disasters
+* Building more reliable development workflows
+#### Topic 6: The Iceberg of Procrastination
+
+* Understanding procrastination and its hidden causes
+* The impact of procrastination on study and work performance
+* Identifying common procrastination behaviors
+* Strategies for overcoming procrastination and improving productivity
+
+### Lessons Learned
+
+Attending this event provided me with fresh perspectives and valuable practical experiences:
+- **Hands-on Cloud Skills**: Better understood the importance of practical learning through platforms like AWS Cloud Quest rather than just theory.
+- **Problem-Solving Mindset**: Hackathons are excellent opportunities to practice building real products, teamwork, and troubleshooting.
+- **The Importance of DevOps**: Realized the "hidden iceberg" in software projects and the critical role of DevOps in early risk detection and prevention.
+- **Personal Development**: Confidence and the ability to overcome procrastination are crucial factors that help optimize work and study performance.
+- **AI Application**: Gained insights into how AI can be applied to create novel and personalized user experiences.
 
 #### Some event photos
-*Add your event photos here*  
+![Event photo 1](/images/even1.1.JPG)
+![Event photo 2](/images/even1.2.JPG)  
 
 > Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.

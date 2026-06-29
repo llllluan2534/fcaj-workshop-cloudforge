@@ -7,23 +7,23 @@ chapter: false
 
 # Báo cáo thực tập
 ### Thông tin sinh viên:
-&emsp; **Họ và tên:** Nguyễn Văn A
+&emsp; **Họ và tên:** Lưu Trần Thị Bích Luận
 
-&emsp; **Số điện thoại:** 0989888999
+&emsp; **Số điện thoại:** 0344632293
 
-&emsp; **Email:** Anguyenvan@gmail.com
+&emsp; **Email:** bichluan253@gmail.com
 
-&emsp; **Trường:** Đại học Sư phạm Kỹ thuật TP.HCM
+&emsp; **Trường:** Trường Đại học Công Nghệ TP.HCM
 
 &emsp; **Ngành:** Công nghệ thông tin
 
-&emsp; **Lớp:** AWS082025
+&emsp; **Lớp:** AWS042026
 
 &emsp; **Công ty thực tập:** Công ty TNHH Amazon Web Services Viet Nam
 
 &emsp; **Vị trí thực tập:** Workforce Bootcamp - First Cloud AI Journey
 
-&emsp; **Thời gian thực tập:** Từ ngày 12/08/2025 đến ngày 12/11/2025
+&emsp; **Thời gian thực tập:** From 17/04/2026 to 17/07/2026
 
 ![Ảnh đại diện của bạn](/images/avatar.png)
 
