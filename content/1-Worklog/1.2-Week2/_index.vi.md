@@ -5,55 +5,31 @@ weight: 1
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 
 ### Mục tiêu tuần 2:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hiểu các dịch vụ mạng và máy tính cốt lõi của AWS bao gồm Amazon VPC và Amazon EC2.
+* Học cách triển khai ứng dụng an toàn và quản lý tài nguyên thông qua các Vai trò quản lý danh tính và truy cập AWS (IAM Roles).
+* Làm chủ môi trường phát triển trên đám mây và lập trình cộng tác bằng AWS Cloud9.
+* Áp dụng các thực hành tốt nhất của AWS về bảo mật, phân vùng mạng và tối ưu hóa tài nguyên.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - **Nội dung học tập:**<br>&emsp; + Khái niệm Amazon VPC và mạng đám mây riêng tư.<br>&emsp; + Mục tiêu bảo mật (phân vùng, kiểm soát truy cập, mã hóa VPN) và các thành phần cơ bản (Security Groups, NACLs).<br>&emsp; + Cấu hình AWS Site-to-Site VPN.<br>&emsp; + Các tính năng nâng cao (NAT Gateways, VPC Flow Logs, CloudWatch, Systems Manager).<br> - **Thực hành:**<br>&emsp; + Chuẩn bị môi trường AWS và khởi chạy EC2 để kiểm thử VPC.<br>&emsp; + Cấu hình VPN và sử dụng IaC để tự động hóa triển khai. | 25/04/2026 | 26/04/2026      |
+| 3   | - **Nội dung học tập:**<br>&emsp; + Tổng quan Amazon EC2, chuẩn bị khởi chạy và sự khác biệt giữa Linux và Windows.<br>&emsp; + Triển khai ứng dụng Node.js CRUD trên Linux và Windows EC2.<br>&emsp; + Giới hạn tài nguyên IAM, thực hành bảo mật và dọn dẹp sau workshop.<br> - **Thực hành:**<br>&emsp; + Khởi chạy và kết nối với các instance EC2 Windows và Linux.<br>&emsp; + Triển khai ứng dụng Node.js CRUD trên cả hai instance.<br>&emsp; + Cấu hình IAM role và policy để hạn chế tài nguyên. | 27/04/2026 | 27/04/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - **Nội dung học tập:**<br>&emsp; + IAM Roles so với Users/Policies và nguyên tắc quyền hạn tối thiểu.<br>&emsp; + Bảo mật truy cập ứng dụng vào AWS qua IAM Roles (không dùng credential tĩnh).<br>&emsp; + Giám sát, kiểm toán và các thực hành tốt nhất về IAM.<br> - **Thực hành:**<br>&emsp; + Tạo và gắn IAM Role cho EC2 để truy cập an toàn S3/DynamoDB.<br>&emsp; + Bật CloudTrail logging để theo dõi hoạt động IAM.<br>&emsp; + Thực hiện dọn dẹp tài nguyên sau khi kiểm thử. | 28/04/2026   | 28/04/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - **Nội dung học tập:**<br>&emsp; + Tổng quan AWS Cloud9, thiết lập môi trường và lợi ích cộng tác.<br>&emsp; + Triển khai ứng dụng trực tiếp từ Cloud9 và quản lý tài nguyên AWS.<br>&emsp; + Bảo mật IAM cho Cloud9 và thực hành tốt nhất về dọn dẹp môi trường.<br>  | 29/04/2026   | 30/04/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | - **Thực hành:**<br>&emsp; + Tạo môi trường Cloud9 và kiểm thử các tính năng code editor/terminal.<br>&emsp; + Triển khai ứng dụng mẫu, cấu hình IAM và chia sẻ môi trường.<br>&emsp; + Thực hiện dọn dẹp tài nguyên sau khi kiểm thử.                                                                                       | 30/04/2026   | 30/04/2026      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Kết quả đạt được tuần 2:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
+* Nắm vững kiến thức toàn diện về thiết kế VPC, các thành phần bảo mật và Site-to-Site VPN.
+* Khởi chạy và quản lý thành công các máy chủ EC2 Linux và Windows, triển khai các ứng dụng web thực tế.
+* Làm chủ việc cấu hình IAM Role để đảm bảo truy cập ứng dụng an toàn, không cần credential, và bật CloudTrail để kiểm toán.
+* Thiết lập môi trường AWS Cloud9 IDE để phát triển cộng tác và tích hợp mượt mà với AWS.
+* Áp dụng Infrastructure as Code và tuân thủ các nguyên tắc của AWS Well-Architected Framework trong suốt quá trình triển khai.
 
 

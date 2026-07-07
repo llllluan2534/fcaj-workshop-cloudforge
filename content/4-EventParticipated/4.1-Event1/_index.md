@@ -133,4 +133,3 @@ Attending this event provided me with fresh perspectives and valuable practical 
 ![Event photo 1](/images/even1.1.JPG)
 ![Event photo 2](/images/even1.2.JPG)  
 
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
