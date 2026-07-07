@@ -1,6 +1,6 @@
 baseURL = "https://llllluan2534.github.io/fcaj-workshop-cloudforge/"
-relativeURLs = false
-canonifyURLs = true
+relativeURLs = true
+canonifyURLs = false
 defaultContentLanguage = "en"
 
 # Change the default theme to be use when building the site with Hugo
