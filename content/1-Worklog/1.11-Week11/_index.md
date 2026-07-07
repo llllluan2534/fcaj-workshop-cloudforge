@@ -1,57 +1,33 @@
 ---
 title: "Week 11 Worklog"
 date: 2024-01-01
-weight: 2
+weight: 11
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 11 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Deep dive into Amazon S3, exploring the object storage architecture and its real-world applications.
+* Master advanced concepts such as Versioning, Storage Classes, and the pricing mechanism.
+* Practice creating buckets, managing objects, and setting up permissions using IAM and Bucket Policies.
+* Configure and experience data security features through encryption and Presigned URLs.
+* Execute a systematic resource cleanup to ensure no data leaks and to tightly control costs.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - **Learning Content:** <br>&emsp; + Deep overview of Amazon S3: Object storage architecture, 99.999999999% (11 9s) durability, and real-world use cases. <br>&emsp; + Bucket and Object concepts: Naming conventions, global uniqueness, and choosing the optimal AWS Region for cost-efficiency. | 05/21/2026 | 05/21/2026      | <https://000057.awsstudygroup.com/> |
+| 3   | - **Learning Content:** <br>&emsp; + S3 Storage Classes: Analyzing S3 Standard, Intelligent-Tiering, Glacier, and selecting the right class. <br>&emsp; + Lifecycle Policies: Automating data transitions and deletions over time to optimize costs. | 05/22/2026 | 05/22/2026      | <https://000057.awsstudygroup.com/> |
+| 4   | - **Learning Content:** <br>&emsp; + Security and Permissions: Differences between IAM Policies, Bucket Policies, and ACLs. <br>&emsp; + Block Public Access mechanisms and the application of Presigned URLs for secure, temporary file sharing. | 05/23/2026 | 05/23/2026      | <https://000057.awsstudygroup.com/> |
+| 5   | - **Practice:** <br>&emsp; + Create an S3 bucket with standard security configurations; experiment with enabling/disabling Versioning to track file changes. <br>&emsp; + Upload, download, and configure metadata for objects. Update files to observe how S3 stores multiple versions. | 05/24/2026 | 05/24/2026      | <https://000057.awsstudygroup.com/> |
+| 6   | - **Practice:** <br>&emsp; + Establish a Bucket Policy to grant read-only access and test anonymous file downloads to verify permissions. <br>&emsp; + Generate Presigned URLs via CLI/Console to share files with time-limited access. <br>&emsp; + Resource Cleanup: Practice deleting objects (including hidden versions) and completely deleting buckets. | 05/25/2026 | 05/25/2026      | <https://000057.awsstudygroup.com/> |
 
 
 ### Week 11 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Gained profound knowledge of the object storage model, Storage Classes, and S3 Versioning.
+* Successfully built a static storage system integrated with granular access control via Bucket Policies and IAM.
+* Gained hands-on experience in securely sharing data with time restrictions using Presigned URLs.
+* Mastered the lifecycle management of resources, from initialization and version control to thorough cleanup.
+* Ensured a solid foundation for utilizing S3 as a primary storage layer for future Data Lake and Web Hosting architectures.

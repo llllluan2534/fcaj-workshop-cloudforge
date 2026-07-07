@@ -1,58 +1,35 @@
 ---
 title: "Worklog Tuần 6"
-date: 2024-01-01
-weight: 1
+date: 2024-05-09
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+
 
 
 ### Mục tiêu tuần 6:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Thiết lập AWS account đúng cách trước khi học CloudWatch.
+* Nắm vững các khái niệm cơ bản về Amazon CloudWatch: metrics, logs, events và alarms.
+* Tăng cường bảo mật cho root user thông qua việc cấu hình Multi-factor Authentication (MFA).
+* Thực hành tạo và quản lý IAM user với quyền quản trị (Administrator Access) cho các tác vụ hàng ngày.
+* Khám phá và làm quen với giao diện quản trị CloudWatch Console cũng như AWS CLI.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - **Learning Content:** <br>&emsp; + Tổng quan về CloudWatch: Công cụ theo dõi hiệu năng và quản lý service, bao gồm metrics, logs, events và alarms. <br>&emsp; + AWS Account & Root User: Hiểu quyền hạn của root user và lý do không nên dùng cho các tác vụ thường ngày. | 04/06/2026   | 04/06/2026      | <https://000008.awsstudygroup.com/> |
+| 3   | - **Learning Content:** <br>&emsp; + Bảo mật Root User: Tại sao MFA lại cực kỳ quan trọng trong việc bảo vệ root user. <br>&emsp; + Tạo IAM User Quản trị: Gán quyền quản trị để giảm thiểu rủi ro bảo mật theo best practices của AWS. <br>&emsp; + Truy cập CloudWatch Console: Cách sử dụng IAM user thay thế root user để quản trị CloudWatch. | 05/06/2026   | 05/06/2026      | <https://000008.awsstudygroup.com/> |
+| 4   | - **Practice:** <br>&emsp; + Tạo AWS Account mới và hoàn tất quy trình xác thực. <br>&emsp; + Bảo mật Root User: Bật MFA (Virtual/Hardware) cho root account để nâng cao an toàn thông tin. | 06/06/2026   | 06/06/2026      | <https://000008.awsstudygroup.com/> |
+| 5   | - **Practice:** <br>&emsp; + Tạo IAM User Quản trị (Administrator Access) và lưu lại thông tin đăng nhập. <br>&emsp; + Cấu hình IAM Identity Center: Tạo permission set và gán quyền. <br>&emsp; + Sử dụng sign-in URL để đăng nhập bằng IAM user mới khởi tạo. | 07/06/2026   | 07/06/2026      | <https://000008.awsstudygroup.com/> |
+| 6   | - **Practice:** <br>&emsp; + Truy cập CloudWatch Console: Chọn region, kiểm tra metrics, thử tạo alarm cơ bản. <br>&emsp; + Cài đặt & cấu hình AWS CLI cho IAM user, chạy thử lệnh liên quan đến CloudWatch. <br>&emsp; + Kiểm tra các tài nguyên đang hoạt động, xác nhận metric đẩy lên CloudWatch và dọn dẹp tài nguyên (cleanup). | 08/06/2026   | 08/06/2026      | <https://000008.awsstudygroup.com/> |
 
 
 ### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Hiểu và thiết lập được một AWS Account hoàn chỉnh với độ bảo mật cao nhất, sẵn sàng cho môi trường production.
+* Nắm bắt tầm quan trọng của việc cô lập quyền root user và áp dụng chuẩn best practice của AWS thông qua IAM User.
+* Sử dụng và cài đặt thành thạo AWS CLI để tương tác với các tài nguyên AWS từ môi trường terminal.
+* Làm quen giao diện quản trị Amazon CloudWatch, biết cách tìm kiếm và phân tích các metrics và alarms căn bản.
+* Hoàn thiện khả năng quản lý danh tính với IAM Identity Center và xây dựng thói quen rà soát, dọn dẹp tài nguyên (cleanup) thường xuyên.

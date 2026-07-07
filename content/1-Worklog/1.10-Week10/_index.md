@@ -1,57 +1,35 @@
 ---
 title: "Week 10 Worklog"
 date: 2024-01-01
-weight: 2
+weight: 10
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
+
 
 
 ### Week 10 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Clearly understand the concept of IAM roles and their application in securely granting permissions to AWS services.
+* Master the principle of least privilege to effectively protect resources.
+* Practice creating, attaching, and verifying IAM roles on EC2 instances.
+* Get familiar with AWS Cloud9, a cloud-based IDE environment.
+* Manage costs by appropriately operating and cleaning up resources (Cloud9, IAM roles).
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - **Learning Content:** <br>&emsp; + Learn what an IAM role is and how applications can securely access AWS services (without hardcoding access keys). <br>&emsp; + Master the principles of granting least privilege. | 05/28/2026 | 05/28/2026 | <https://000048.awsstudygroup.com/> |
+| 3   | - **Practice:** <br>&emsp; + Create an IAM role and attach necessary policies. <br>&emsp; + Attach the role to an EC2 instance and test access permissions. <br>&emsp; + Perform cleanup by removing the role from the instance when no longer in use. | 05/29/2026 | 05/29/2026      | <https://000048.awsstudygroup.com/>       |
+| 4   | - **Learning Content:** <br>&emsp; + Understand what AWS Cloud9 is and how it operates backed by EC2. <br>&emsp; + Explore working in the IDE (file explorer, terminal, editor) directly in the browser. | 05/30/2026 | 05/30/2026      | <https://000049.awsstudygroup.com/>       |
+| 5   | - **Practice:** <br>&emsp; + Create a Cloud9 environment with appropriate instance configuration and platform. <br>&emsp; + Open the IDE, try coding, manipulate files, and test connections to AWS resources. | 05/31/2026 | 05/31/2026      | <https://000049.awsstudygroup.com/>       |
+| 6   | - **Learning & Practice:** <br>&emsp; + Learn about cost management for Cloud9 (stopping instances when not in use). <br>&emsp; + Stop the environment after completing the lab and check backend EC2 resources to prevent extra charges. | 06/01/2026 | 06/01/2026      | <https://000049.awsstudygroup.com/>       |
 
 
 ### Week 10 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Understood and successfully utilized IAM roles to securely grant AWS service access to applications running on EC2.
+* Mastered how to manage, adjust, and clean up unnecessary permissions following the least privilege principle.
+* Successfully initialized and set up the AWS Cloud9 cloud programming environment.
+* Successfully executed programming, terminal commands, and resource connections directly in the browser via Cloud9 IDE.
+* Ensured strong cost control by stopping or terminating Cloud9/EC2 environments when not in use.

@@ -1,57 +1,34 @@
 ---
 title: "Week 8 Worklog"
 date: 2024-01-01
-weight: 1
+weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
 
 ### Week 8 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Get familiar with AWS CLI and understand the correlation between CLI commands and AWS APIs.
+* Successfully install and configure the AWS CLI on your personal OS (Windows, macOS, or Linux).
+* Securely manage credentials (Access key ID, Secret access key) via the `.aws` directory instead of the root account.
+* Practice operating multiple services (IAM, S3, EC2) directly from the command line.
+* Master the steps to clean up credentials to ensure security.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - **Learning Content:** <br>&emsp; + AWS CLI Overview: Command-line tool to manage AWS from the terminal, great for automation & DevOps. Each CLI command maps to an AWS API. <br>&emsp; + IAM user & credentials: It's mandatory to use an IAM user (Access/Secret keys), never root. Credentials are saved locally for authentication. | 06/18/2026 | 06/18/2026      | <https://000011.awsstudygroup.com/> |
+| 3   | - **Learning Content:** <br>&emsp; + CLI Configuration: Use `configure` to set Access keys, region, and format. CLI automatically reads credentials from the local config directory. <br>&emsp; + Basic Commands: Check version, IAM identity (`sts get-caller-identity`); S3 ops (list, create, delete); EC2 ops (list regions/instances); IAM ops (list users/policies). | 06/19/2026 | 06/19/2026      | <https://000011.awsstudygroup.com/> |
+| 4   | - **Practice:** <br>&emsp; + Prepare IAM user & credentials: Create IAM user for CLI, generate Access Key, save ID/Secret Key and lab region. <br>&emsp; + Install AWS CLI: Download/install based on OS (Windows, macOS, Linux). Run version check in terminal to confirm. <br>&emsp; + Initial Configuration: Run `aws configure` to input credentials, region, format, and verify files. | 06/20/2026 | 06/20/2026      | <https://000011.awsstudygroup.com/> |
+| 5   | - **Practice:** <br>&emsp; + Verify Identity: Run IAM command to confirm account ID and ARN match the lab. <br>&emsp; + S3 Operations: List existing buckets, create a new S3 bucket (if required by lab), and verify by listing again. <br>&emsp; + EC2 Operations: List AWS regions, list EC2 instances in the current region, and view details of a specific instance. | 06/21/2026 | 06/21/2026      | <https://000011.awsstudygroup.com/> |
+| 6   | - **Practice:** <br>&emsp; + IAM Operations: List IAM users, check policies attached to the current user to verify lab permissions. <br>&emsp; + Cleanup: Delete Access Key on the AWS Console for safety on public machines; delete local config files to remove credentials. | 06/22/2026 | 06/22/2026      | <https://000011.awsstudygroup.com/> |
 
 
 ### Week 8 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Successfully installed and configured the AWS CLI tailored to the personal operating system environment.
+* Deeply understood authentication mechanisms via Access and Secret keys, ensuring best security practices.
+* Gained confidence in managing resources remotely via the CLI for popular services (Amazon S3, Amazon EC2, IAM).
+* Developed skills in reading CLI JSON outputs and using the `--query` parameter to extract specific data.
+* Cultivated good risk management habits by disabling or deleting local credentials post-project.

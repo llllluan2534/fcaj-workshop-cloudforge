@@ -1,59 +1,35 @@
 ---
 title: "Worklog Tuần 8"
 date: 2024-01-01
-weight: 1
+weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+
 
 
 ### Mục tiêu tuần 8:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Làm quen với AWS CLI, hiểu được sự tương quan giữa các lệnh CLI và API của AWS.
+* Thực hiện cài đặt và cấu hình thành công AWS CLI trên hệ điều hành cá nhân (Windows, macOS hoặc Linux).
+* Quản lý an toàn credentials (Access key ID, Secret access key) thông qua thư mục `.aws` thay vì dùng root account.
+* Thực hành thao tác với đa dạng dịch vụ (IAM, S3, EC2) trực tiếp từ dòng lệnh.
+* Nắm vững các bước dọn dẹp credentials để đảm bảo an toàn bảo mật.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| 2   | - **Learning Content:** <br>&emsp; + Tổng quan về AWS CLI: Công cụ dòng lệnh quản lý AWS từ terminal thay cho web console, hỗ trợ tốt cho tự động hóa và DevOps. Mỗi lệnh CLI tương ứng một API của AWS. <br>&emsp; + IAM user & credentials: Yêu cầu bắt buộc dùng IAM user (Access Key ID / Secret Access Key), không dùng root account. Credentials được lưu cục bộ để CLI xác thực. | 18/06/2026   | 18/06/2026      | <https://000011.awsstudygroup.com/> |
+| 3   | - **Learning Content:** <br>&emsp; + Cách cấu hình AWS CLI: Dùng lệnh `configure` để thiết lập Access key, region và format. CLI tự động đọc credentials từ thư mục config máy local. <br>&emsp; + Các lệnh cơ bản: Kiểm tra version, danh tính IAM (`sts get-caller-identity`); thao tác S3 (liệt kê, tạo, xóa); thao tác EC2 (liệt kê regions/instances); thao tác IAM (liệt kê user/policies). | 19/06/2026   | 19/06/2026      | <https://000011.awsstudygroup.com/> |
+| 4   | - **Practice:** <br>&emsp; + Chuẩn bị IAM user & credentials: Tạo IAM user cho CLI, tạo Access Key (use case CLI), lưu lại ID/Secret Key và region lab. <br>&emsp; + Cài đặt AWS CLI: Tải và cài đặt theo hệ điều hành (Windows, macOS, Linux). Chạy thử kiểm tra phiên bản trên terminal để xác nhận. <br>&emsp; + Cấu hình lần đầu: Chạy `aws configure` nhập credentials, region, output format và kiểm tra file cấu hình. | 20/06/2026   | 20/06/2026      | <https://000011.awsstudygroup.com/> |
+| 5   | - **Practice:** <br>&emsp; + Kiểm tra danh tính: Chạy lệnh IAM xác nhận account ID và ARN khớp với lab. <br>&emsp; + Thao tác S3: Dùng CLI liệt kê buckets hiện có, tạo một S3 bucket mới (nếu lab yêu cầu) và xác minh lại bằng lệnh liệt kê. <br>&emsp; + Thao tác EC2: Dùng CLI liệt kê regions, liệt kê EC2 instances trong region đang dùng, xem thông tin một instance cụ thể. | 21/06/2026   | 21/06/2026      | <https://000011.awsstudygroup.com/> |
+| 6   | - **Practice:** <br>&emsp; + Thao tác IAM: Dùng CLI liệt kê các IAM user, kiểm tra policies được gắn vào user hiện tại để xác minh quyền hạn theo lab. <br>&emsp; + Dọn dẹp: Xóa Access Key trên AWS Console để đảm bảo an toàn nếu dùng máy public; xóa file cấu hình cục bộ nếu không muốn giữ credentials. | 22/06/2026   | 22/06/2026      | <https://000011.awsstudygroup.com/> |
 
 ### Kết quả đạt được tuần 8:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
+* Hoàn thành thao tác cài đặt và cấu hình AWS CLI phù hợp với môi trường hệ điều hành cá nhân.
+* Hiểu rõ cơ chế xác thực qua Access key và Secret key, đảm bảo thực hành chuẩn bảo mật khi làm việc với AWS.
+* Tự tin quản lý tài nguyên từ xa bằng CLI với nhiều dịch vụ phổ biến (Amazon S3, Amazon EC2, IAM).
+* Rèn luyện kỹ năng đọc hiểu kết quả đầu ra (output JSON) và áp dụng tham số `--query` để trích xuất dữ liệu mong muốn.
+* Xây dựng thói quen tốt về quản trị rủi ro bằng việc vô hiệu hóa hoặc xóa credentials cục bộ sau khi kết thúc dự án.
 

@@ -1,57 +1,35 @@
 ---
 title: "Week 6 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2024-05-09
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
+
 
 
 ### Week 6 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Properly set up an AWS account before diving into CloudWatch.
+* Grasp basic concepts of Amazon CloudWatch: metrics, logs, events, and alarms.
+* Enhance root user security by configuring Multi-factor Authentication (MFA).
+* Practice creating and managing an IAM user with administrative privileges for daily tasks.
+* Explore and familiarize yourself with the CloudWatch Console and AWS CLI.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - **Learning Content:** <br>&emsp; + CloudWatch Overview: A tool for performance monitoring and service management via metrics, logs, events, and alarms. <br>&emsp; + AWS Account & Root User: Understand root permissions and why it shouldn't be used daily. | 06/04/2026 | 06/04/2026      | <https://000008.awsstudygroup.com/> |
+| 3   | - **Learning Content:** <br>&emsp; + Root User Security: Why MFA is critically important to protect the root user. <br>&emsp; + Create Admin IAM User: Assign admin privileges to reduce security risks per AWS best practices. <br>&emsp; + Access CloudWatch Console: How to use an IAM user instead of the root user for CloudWatch management. | 06/05/2026 | 06/05/2026      | <https://000008.awsstudygroup.com/> |
+| 4   | - **Practice:** <br>&emsp; + Create a new AWS Account and complete the verification process. <br>&emsp; + Secure Root User: Enable MFA (Virtual/Hardware) for the root account to enhance information security. | 06/06/2026 | 06/06/2026      | <https://000008.awsstudygroup.com/> |
+| 5   | - **Practice:** <br>&emsp; + Create an Admin IAM User (Administrator Access) and securely store the credentials. <br>&emsp; + Configure IAM Identity Center: Create a permission set and assign access. <br>&emsp; + Use the sign-in URL to log in with the newly created IAM user. | 06/07/2026 | 06/07/2026      | <https://000008.awsstudygroup.com/> |
+| 6   | - **Practice:** <br>&emsp; + Access CloudWatch Console: Select the region, check metrics, and try creating a basic alarm. <br>&emsp; + Install & configure AWS CLI for the IAM user, run a test command related to CloudWatch. <br>&emsp; + Verify active resources, confirm metrics are pushed to CloudWatch, and clean up resources. | 06/08/2026 | 06/08/2026      | <https://000008.awsstudygroup.com/> |
 
 
 ### Week 6 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Understood and established a fully functional AWS Account with top-tier security readiness for production.
+* Recognized the importance of isolating the root user and strictly applied AWS IAM best practices.
+* Proficiently installed and utilized the AWS CLI to interact with AWS resources from the terminal.
+* Familiarized with the Amazon CloudWatch management interface, locating and analyzing basic metrics and alarms.
+* Perfected identity management capabilities with IAM Identity Center and cultivated a routine resource cleanup habit.

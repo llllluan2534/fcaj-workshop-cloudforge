@@ -1,59 +1,33 @@
 ---
 title: "Worklog Tuần 5"
-date: 2024-01-01
-weight: 1
+date: 2024-05-16
+weight: 5
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 
 ### Mục tiêu tuần 5:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hiểu rõ cơ chế hoạt động của Amazon EC2 Auto Scaling Group (ASG) và Load Balancer trong việc tự động điều chỉnh tài nguyên.
+* Nắm vững kiến trúc triển khai ứng dụng FCJ Management có khả năng mở rộng linh hoạt.
+* Thực hành tạo Target Group, khởi tạo Auto Scaling Group, và cấu hình các policy liên quan.
+* Tích hợp Load Balancer vào ASG để phân phối lưu lượng truy cập cân bằng giữa các EC2 instances.
+* Triển khai hệ thống giám sát bằng CloudWatch và nhận thông báo qua Amazon SNS khi có sự thay đổi về tài nguyên.
 
 ### Các công việc cần triển khai trong tuần này:
 | Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| 2   | - **Learning Content:** <br>&emsp; + Tổng quan Auto Scaling Group: Tự động điều chỉnh EC2 instance theo nhu cầu thực tế, tránh lãng phí. <br>&emsp; + Giới thiệu ứng dụng FCJ Management: Phân tích kiến trúc triển khai ứng dụng đồng loạt trên ASG. | 14/05/2026   | 14/05/2026      | <https://000006.awsstudygroup.com/> |
+| 3   | - **Learning Content:** <br>&emsp; + Load Balancer & Target Group: Cơ chế phân phối traffic đến các instance trong ASG. <br>&emsp; + Hướng mở rộng và giám sát: Ứng dụng CloudWatch metric để quyết định thêm/giảm instance kịp thời. <br>&emsp; + Thông báo & Rủi ro: Tích hợp Amazon SNS. | 15/05/2026   | 15/05/2026      | <https://000006.awsstudygroup.com/> |
+| 4   | - **Practice:** <br>&emsp; + Chuẩn bị VPC, subnet, Launch Template. <br>&emsp; + Tạo Target Group (FCJ-Management-TG) qua HTTP và đăng ký các EC2 instance. <br>&emsp; + Tạo Auto Scaling Group (FCJ-Management-ASG) kết nối với 3 public subnets. | 16/05/2026   | 16/05/2026      | <https://000006.awsstudygroup.com/> |
+| 5   | - **Practice:** <br>&emsp; + Cấu hình Network & Kết nối Load Balancer: Chọn Attach to an existing load balancer, bật Health checks. <br>&emsp; + Cấu hình Scaling: Thiết lập Desired/Min/Max capacity (1/1/3) và thu thập metrics CloudWatch. <br>&emsp; + Thiết lập thông báo SNS gửi email khi có events. | 17/05/2026   | 17/05/2026      | <https://000006.awsstudygroup.com/> |
+| 6   | - **Practice:** <br>&emsp; + Test & Điều chỉnh: Copy DNS của Load Balancer để truy cập app FCJ Management. Thay đổi Desired capacity để quan sát ASG tự động scale và check SNS email. <br>&emsp; + Dọn dẹp: Xóa ASG, Target Group, Load Balancer để không phát sinh cước. | 18/05/2026   | 18/05/2026      | <https://000006.awsstudygroup.com/> |
 
 ### Kết quả đạt được tuần 5:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Vận hành thành thạo Auto Scaling Group kết hợp Load Balancer để đảm bảo high availability cho ứng dụng FCJ Management.
+* Hiểu và thao tác nhuần nhuyễn quy trình tạo Target Group, kết nối Launch Template với ASG.
+* Nắm bắt cách giám sát hệ thống với CloudWatch và phản ứng với các thông báo hệ thống thông qua Amazon SNS.
+* Hoàn thiện kỹ năng phân tích và xử lý khi hệ thống cần mở rộng hoặc thu hẹp tài nguyên (scale out / scale in).
+* Nắm vững các bước dọn dẹp tài nguyên (cleanup) phức tạp khi làm việc với nhiều dịch vụ AWS liên kết cùng lúc.

@@ -69,6 +69,6 @@ pre: " <b> 4.3. </b> "
 - Sự kiện đã cung cấp những hiểu biết sâu sắc và giá trị về cách kết hợp các dịch vụ AWS và công nghệ generative AI để giải quyết những thách thức thực tế trong doanh nghiệp. Thông qua các bài thuyết trình kỹ thuật và các màn trình diễn trực tiếp, những người tham gia đã có được sự hiểu biết sâu sắc hơn về kiến trúc AI hiện đại, các chiến lược tự động hóa và các phương pháp triển khai bảo mật có thể áp dụng trên nhiều lĩnh vực kinh doanh khác nhau.
 
 #### Một số hình ảnh sự kiện
-![Ảnh sự kiện 1](/images/even3.1.JPG)
-![Ảnh sự kiện 2](/images/even1.2.JPG)  
+![Ảnh sự kiện 1](/images/event3.1.JPG)
+![Ảnh sự kiện 2](/images/event3.2.JPG)  
 

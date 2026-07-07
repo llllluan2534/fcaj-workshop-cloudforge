@@ -1,7 +1,7 @@
 ---
 title: "Week 2 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2024-04-20
+weight: 2
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
@@ -9,25 +9,28 @@ pre: " <b> 1.2. </b> "
 
 ### Week 2 Objectives:
 
-* Understand core AWS networking and compute services including Amazon VPC and Amazon EC2.
-* Learn to deploy applications securely and manage resources using AWS Identity and Access Management (IAM) Roles.
-* Master cloud-based development and collaborative coding using AWS Cloud9.
-* Apply AWS best practices for security, network segmentation, and resource optimization.
+* Understand Amazon VPC, create basic network components, and deploy EC2 instances.
+* Set up a Site-to-Site VPN to connect on-premises networks with VPC.
+* Master the concepts of Security Groups and Network ACLs for traffic control.
+* Understand how to apply Infrastructure as Code (IaC) to automate infrastructure deployment.
+* Learn how to properly perform resource cleanup after practice.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - **Learning Content:**<br>&emsp; + Amazon VPC concepts and private cloud networks.<br>&emsp; + Security objectives (segmentation, access control, VPN encryption) and basic components (Security Groups, NACLs).<br>&emsp; + AWS Site-to-Site VPN configuration.<br>&emsp; + Advanced features (NAT Gateways, VPC Flow Logs, CloudWatch, Systems Manager).<br> - **Practice:**<br>&emsp; + Prepared AWS environment and launched EC2 for VPC testing.<br>&emsp; + Configured VPN and used IaC for automated deployment. | 25/04/2026 | 26/04/2026      |
-| 3   | - **Learning Content:**<br>&emsp; + Amazon EC2 overview, launch preparation, and Linux vs Windows differences.<br>&emsp; + Deploying Node.js CRUD app on Linux and Windows EC2.<br>&emsp; + IAM resource limits, security best practices, and workshop cleanup.<br> - **Practice:**<br>&emsp; + Launched and connected to Windows and Linux EC2 instances.<br>&emsp; + Deployed Node.js CRUD app on both instances.<br>&emsp; + Configured IAM roles and policies for resource restriction. | 27/04/2026 | 27/04/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - **Learning Content:**<br>&emsp; + IAM Roles vs Users/Policies and least privilege principle.<br>&emsp; + Secure application access to AWS via IAM Roles (no static credentials).<br>&emsp; + Monitoring, auditing, and IAM best practices.<br> - **Practice:**<br>&emsp; + Created and attached IAM Roles to EC2 for secure S3/DynamoDB access.<br>&emsp; + Enabled CloudTrail logging for IAM activity.<br>&emsp; + Performed resource cleanup after testing. | 28/04/2026 | 28/04/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - **Learning Content:**<br>&emsp; + AWS Cloud9 overview, environment setup, and collaboration benefits.<br>&emsp; + Deploying apps directly from Cloud9 and managing AWS resources.<br>&emsp; + IAM security for Cloud9 and environment cleanup best practices.<br>  | 29/04/2026 | 30/04/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   |- **Practice:**<br>&emsp; + Created Cloud9 environment and tested code editor/terminal features.<br>&emsp; + Deployed sample app, configured IAM, and shared environment.<br>&emsp; + Performed resource cleanup after testing.                                                                                     | 30/04/2026 | 30/04/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - **Learning Content:** <br>&emsp; + Introduction to Amazon VPC: The foundation for creating private virtual networks. <br>&emsp; + Network Security in VPC: Comparing and using Security Groups, Network ACLs. | 04/25/2026 | 04/25/2026      | <https://000003.awsstudygroup.com/> |
+| 3   | - **Learning Content:** <br>&emsp; + Environment preparation: VPC components, subnets, Internet Gateway, route tables. <br>&emsp; + Deploy EC2 Instances for testing. | 04/26/2026 | 04/26/2026      | <https://000003.awsstudygroup.com/> |
+| 4   | - **Learning Content:** <br>&emsp; + AWS Site-to-Site VPN: Secure network connection. <br>&emsp; + Infrastructure as Code Templates. <br> - **Practice:** <br>&emsp; + Create VPC, Subnet, Internet Gateway, and Route Table. | 04/27/2026 | 04/27/2026      | <https://000003.awsstudygroup.com/> |
+| 5   | - **Practice:** <br>&emsp; + Create Security Groups and EC2 Server. <br>&emsp; + Test Connection (Ping, SSH) and create NAT Gateway. <br>&emsp; + Use Reachability Analyzer. | 04/28/2026 | 04/28/2026      | <https://000003.awsstudygroup.com/> |
+| 6   | - **Practice:** <br>&emsp; + Create EC2 Instance Connect Endpoint. <br>&emsp; + Set up Site-to-Site VPN, configure Customer Gateway. <br>&emsp; + Clean up resources. | 04/29/2026 | 04/30/2026      | <https://000003.awsstudygroup.com/> |
 
 
 ### Week 2 Achievements:
 
-* Gained a comprehensive understanding of VPC design, security components, and Site-to-Site VPN.
-* Successfully launched and managed both Linux and Windows EC2 instances, deploying functional web applications.
-* Mastered IAM Role configuration to ensure secure, credential-free application access and enabled CloudTrail for auditing.
-* Set up an AWS Cloud9 IDE environment for collaborative development and seamless AWS integration.
-* Applied Infrastructure as Code and followed AWS Well-Architected Framework principles throughout deployments.
+* Understood and successfully built an Amazon VPC along with core components (Subnets, Internet Gateway, Route Table).
+* Effectively applied Security Groups and Network ACLs to secure the VPC network.
+* Successfully launched EC2 servers and configured seamless network connectivity (NAT Gateway, EC2 Instance Connect).
+* Configured and established a Site-to-Site VPN connection between the Customer Gateway and Virtual Private Gateway.
+* Became familiar with the Reachability Analyzer tool for troubleshooting network issues.
+* Understood how to standardize environments using Infrastructure as Code Templates.
+* Successfully completed the cleanup of unused resources to prevent unnecessary charges.

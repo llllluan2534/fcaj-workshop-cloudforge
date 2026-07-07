@@ -67,6 +67,6 @@ pre: " <b> 4.3. </b> "
 - The event provided valuable insights into how AWS services and generative AI technologies can be combined to solve real-world enterprise challenges. Through technical presentations and live demonstrations, participants gained a deeper understanding of modern AI architectures, automation strategies, and secure deployment practices that can be applied across various business domains.
 
 #### Some event photos
-![Event photo 1](/images/even1.1.JPG)
-![Event photo 2](/images/even1.2.JPG)  
+![Event photo 1](/images/event3.1.JPG)
+![Event photo 2](/images/event3.2.JPG)  
 
