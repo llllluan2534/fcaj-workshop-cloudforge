@@ -20,7 +20,7 @@ Initially, SMA runs entirely on local machines (via Docker) to ensure privacy an
 ### 3. Solution Architecture
 SMA is designed with a hybrid local-to-cloud approach to be convenient for internal development while remaining easy to upgrade to a production environment later. In the local phase, the entire media ingest workflow runs in Docker Compose: the system receives videos and images, automatically detects scenes, transcribes audio, generates AI content descriptions, and saves processed data locally.
 
-When deploying to AWS, the architecture can scale without major changes to the processing logic. S3 is used for media storage, Bedrock and Transcribe handle the AI components, RDS PostgreSQL stores metadata, CloudFront combined with S3 delivers the frontend interface, while services like Cognito, WAF, ECR, Lambda, ECS Fargate, App Runner, Step Functions, SQS, EventBridge, CloudWatch, X-Ray, ElastiCache, and VPC support security, orchestration, monitoring, and system scaling.
+When deploying to AWS, the architecture can scale without major changes to the processing logic. S3 is used for media storage, Bedrock and Transcribe handle the AI components, RDS PostgreSQL stores metadata, AWS Amplify manages and delivers the frontend interface, while services like Cognito, ECR, ECS Fargate, App Runner, Step Functions, SQS, EventBridge, CloudWatch, X-Ray, ElastiCache, and VPC support security, orchestration, monitoring, and system scaling.
 
 ![SMA Architecture](/images/2-Proposal/1.SMA_architecture.png)
 ![SMA Architecture](/images/2-Proposal/2.SMA_architecture.png)
@@ -28,10 +28,9 @@ When deploying to AWS, the architecture can scale without major changes to the p
 **AWS Services Integrated in the Architecture:**
 - **Networking & Delivery:**
   - **Amazon Route 53**: DNS management.
-  - **Amazon CloudFront**: CDN for rapid delivery of the React frontend and media.
+  - **AWS Amplify**: Hosting and CDN for rapid delivery of the React frontend.
   - **Amazon VPC**: Secure virtual network, utilizing a **NAT Gateway** and Internet Gateway for private subnet outbound access.
 - **Security & Identity:**
-  - **AWS WAF**: Web Application Firewall to protect against common exploits.
   - **Amazon Cognito**: User authentication and authorization (JWT tokens).
   - **AWS Secrets Manager**: Secure storage for DB credentials and API keys.
 - **Storage & Databases:**
@@ -42,7 +41,6 @@ When deploying to AWS, the architecture can scale without major changes to the p
   - **AWS App Runner**: Simplified, auto-scaling deployment for the FastAPI backend.
   - **Amazon API Gateway**: Routing for REST APIs and WebSocket (WSS Push).
   - **Amazon ECS (AWS Fargate)**: Serverless compute for video processing Auto Scaling tasks.
-  - **AWS Lambda**: Event-driven serverless code execution (e.g., saving embeddings).
 - **Artificial Intelligence (AI/ML):**
   - **Amazon Bedrock**: Utilizes models like Nova Lite & Titan Embeddings for semantic analysis and vector generation.
   - **Amazon Transcribe**: Automated Speech-to-Text for audio extraction.
@@ -54,10 +52,10 @@ When deploying to AWS, the architecture can scale without major changes to the p
   - **Amazon CloudWatch & AWS X-Ray**: Comprehensive logging, metric alarms, and Distributed Tracing.
 
 **Core Component Design**
-- **Frontend Layer**: React app stored on S3, distributed by CloudFront + Route 53, protected by WAF and Cognito.
+- **Frontend Layer**: React app managed and distributed by AWS Amplify with Route 53, authenticated via Cognito.
 - **API & Routing Layer**: API Gateway routes traffic to the FastAPI service hosted on App Runner.
 - **Processing & AI Layer**: Step Functions coordinates EventBridge and SQS to trigger ECS (Fargate) tasks for scene detection, followed by Bedrock & Transcribe for AI extraction.
-- **Data Layer**: Metadata is persisted in RDS PostgreSQL, cached in ElastiCache. Lambda handles writing vectors and saving media objects to S3. The entire data layer is secured within a VPC with a NAT Gateway.
+- **Data Layer**: Metadata is persisted in RDS PostgreSQL, cached in ElastiCache. Vectors and media object persistence are handled directly from the processing tasks. The entire data layer is secured within a VPC with a NAT Gateway.
 
 ### 4. Implementation Phases
 The project is divided into 4 main phases:
@@ -77,17 +75,15 @@ Deploying this comprehensive production architecture with over 20 AWS services (
 | **Amazon ECS (Fargate)** | Auto Scaling Task for Video Processing (~1 vCPU, 2GB RAM) | $15.00 |
 | **Amazon Bedrock & Transcribe** | AI, Speech-to-Text, Embeddings (Base estimate) | $15.00 |
 | **AWS App Runner** | Web Service / API (Minimum 1 instance) | $7.00 |
-| **AWS WAF** | Web Application Firewall (1 Web ACL, 1 Rule) | $6.00 |
 | **Amazon CloudWatch & X-Ray** | Logs, Metrics, Alarms, Distributed Tracing | $5.00 |
 | **Amazon S3** | Media & Keyframe Storage (Est. ~50GB) | $2.00 |
 | **AWS Secrets Manager** | Keys & Credentials Management (5 secrets) | $2.00 |
 | **Amazon API Gateway** | REST API & WSS Push (Request-based) | $1.00 |
-| **Amazon CloudFront** | Content Delivery CDN (Data Transfer) | $1.00 |
+| **AWS Amplify** | Hosting & CDN for Frontend | $1.00 |
 | **Amazon SQS, EventBridge, Step Functions** | Workflow Orchestration, Event Bus, Queues | $1.00 |
 | **Amazon Route 53** | DNS Management (1 Hosted Zone) | $0.50 |
 | **Amazon Cognito** | User Authentication (JWT) | $0.00 (Free Tier) |
-| **AWS Lambda** | Metadata & Embedding Storage | $0.00 (Free Tier) |
-| **Estimated Total** | **Entire System** | **~$187.90** |
+| **Estimated Total** | **Entire System** | **~$181.90** |
 
 ### 6. Risk Assessment & Expected Outcomes
 - **Risk Matrix:** Cloud scaling costs could increase, and local AI inference may be slow.
