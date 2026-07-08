@@ -1,12 +1,11 @@
 ---
 title: "Chia sẻ & Đóng góp ý kiến"
-date: 2024-01-01
+date: 2026-04-17
 weight: 7
 chapter: false
 pre: " <b> 7. </b> "
 ---
 
-> Dưới đây là những chia sẻ và đánh giá cá nhân của tôi về trải nghiệm khi tham gia chương trình First Cloud AI Journey. Hy vọng những góp ý này sẽ giúp đội ngũ FCAJ ngày càng hoàn thiện hơn:
 
 ### Đánh giá Tổng quan
 
