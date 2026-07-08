@@ -1,4 +1,4 @@
----
+﻿---
 title: "Tự Đánh Giá"
 date: 2026-04-17
 weight: 6
@@ -7,7 +7,7 @@ pre: " <b> 6. </b> "
 ---
 
 
-Trong suốt quá trình thực tập tại AWS First Cloud AI Journey từ **17/04/2026** đến **17/04/2026**, tôi đã có cơ hội học hỏi, thực hành và áp dụng những kiến thức đã học ở trường vào môi trường làm việc thực tế.  
+Trong suốt quá trình thực tập tại AWS First Cloud AI Journey từ **17/04/2026** đến **12/04/2026**, tôi đã có cơ hội học hỏi, thực hành và áp dụng những kiến thức đã học ở trường vào môi trường làm việc thực tế.  
 Tôi đã tham gia vào đội ngũ **CloudForg** với vai trò **Lập trình viên Frontend** cho dự án **Smart Media Analytics**. Qua đó, tôi đã cải thiện đáng kể các kỹ năng của mình trong việc xây dựng giao diện người dùng đáp ứng, tích hợp các ứng dụng frontend với các dịch vụ của AWS (như Amazon S3, API Gateway và các công cụ phân tích phương tiện bằng AI), phân tích yêu cầu hệ thống và làm việc nhóm một cách hiệu quả trong quy trình làm việc linh hoạt (agile).
 
 Về đạo đức nghề nghiệp, tôi luôn cố gắng hoàn thành tốt các nhiệm vụ được giao, tuân thủ các quy định của nơi làm việc và tích cực trao đổi với đồng nghiệp để nâng cao hiệu suất công việc.
