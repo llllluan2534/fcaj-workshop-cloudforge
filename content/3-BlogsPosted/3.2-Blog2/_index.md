@@ -1,6 +1,6 @@
 ---
 title: "Blog 2"
-date: 2026-04-17
+date: 2024-01-01
 weight: 1
 chapter: false
 pre: " <b> 3.2. </b> "
@@ -78,7 +78,7 @@ This is also a crucial foundation for developing Generative AI systems in the he
 
 ## Why does AWS use HealthLake?
 
-What I highly appreciate is that AWS doesn't just focus on "reading documents", but also normalizes data to FHIR (Fast Healthcare Interoperability Resources) â€” a widely used healthcare data exchange standard globally.
+What I highly appreciate is that AWS doesn't just focus on "reading documents", but also normalizes data to FHIR (Fast Healthcare Interoperability Resources) — a widely used healthcare data exchange standard globally.
 
 This ensures that processed data is not "locked" within a specific application, but can be integrated with various HIS, EMR systems, or other AI applications.
 

@@ -1,17 +1,17 @@
 ---
 title: "Blog 3"
-date: 2026-04-17
+date: 2024-01-01
 weight: 1
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
 {{% notice warning %}}
-âš ï¸ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
+⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
 {{% /notice %}}
 
 # How AI and Robotics Are Transforming Sustainable Agriculture with Amazon SageMaker AI
 
-Today I'd like to share an interesting article from the AWS Architecture Blog about how Aigenâ€”an autonomous agricultural robotics companyâ€”modernized its entire AI pipeline using Amazon SageMaker AI to build a smart and sustainable farming system.
+Today I'd like to share an interesting article from the AWS Architecture Blog about how Aigen—an autonomous agricultural robotics company—modernized its entire AI pipeline using Amazon SageMaker AI to build a smart and sustainable farming system.
 
 In modern agriculture, using robots to identify weeds, monitor crops, or optimize yields is no longer a novelty. However, as the number of robots increases, a new challenge emerges:
 * Robots operate in areas with unstable Internet connections.
@@ -39,7 +39,7 @@ Next, Amazon SageMaker AI takes over almost the entire Machine Learning pipeline
 * Training new models on SageMaker's GPU clusters.
 * Deploying the optimized model back to the robots in the field.
 
-What I find fascinating is that AWS built a continuous learning loop: the robot collects data â†’ AI learns from new data â†’ the model is improved â†’ the robot operates more accurately in subsequent crop seasons.
+What I find fascinating is that AWS built a continuous learning loop: the robot collects data → AI learns from new data → the model is improved → the robot operates more accurately in subsequent crop seasons.
 
 ### 2. What Helps Reduce Labeling Costs?
 One of the highlights of the solution is Active Learning.
@@ -81,4 +81,4 @@ In my view, the key takeaway from this architecture is not just the use of AI or
 Instead of investing in more GPUs every time the number of robots increases, Aigen moved the entire model training and management process to the AWS cloud. The robots focus solely on data collection and inference at the edge, while heavy tasks like training, labeling, or model optimization are handled in the cloud.
 This is a great example of combining AI + Robotics + Cloud to solve practical problems in smart agriculture and sustainable development.
 
-**Source:** [AWS Architecture Blog â€“ How Aigen transformed agricultural robotics for sustainable farming with Amazon SageMaker AI](https://aws.amazon.com/blogs/architecture/how-aigen-transformed-agricultural-robotics-for-sustainable-farming-with-amazon-sagemaker-ai/)
+**Source:** [AWS Architecture Blog – How Aigen transformed agricultural robotics for sustainable farming with Amazon SageMaker AI](https://aws.amazon.com/blogs/architecture/how-aigen-transformed-agricultural-robotics-for-sustainable-farming-with-amazon-sagemaker-ai/)

@@ -1,6 +1,6 @@
 ---
-title: "Worklog Tuáº§n 8"
-date: 2026-04-17
+title: "Worklog Tuần 8"
+date: 2024-01-01
 weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
@@ -8,28 +8,28 @@ pre: " <b> 1.8. </b> "
 
 
 
-### Má»¥c tiÃªu tuáº§n 8:
+### Mục tiêu tuần 8:
 
-* LÃ m quen vá»›i AWS CLI, hiá»ƒu Ä‘Æ°á»£c sá»± tÆ°Æ¡ng quan giá»¯a cÃ¡c lá»‡nh CLI vÃ  API cá»§a AWS.
-* Thá»±c hiá»‡n cÃ i Ä‘áº·t vÃ  cáº¥u hÃ¬nh thÃ nh cÃ´ng AWS CLI trÃªn há»‡ Ä‘iá»u hÃ nh cÃ¡ nhÃ¢n (Windows, macOS hoáº·c Linux).
-* Quáº£n lÃ½ an toÃ n credentials (Access key ID, Secret access key) thÃ´ng qua thÆ° má»¥c `.aws` thay vÃ¬ dÃ¹ng root account.
-* Thá»±c hÃ nh thao tÃ¡c vá»›i Ä‘a dáº¡ng dá»‹ch vá»¥ (IAM, S3, EC2) trá»±c tiáº¿p tá»« dÃ²ng lá»‡nh.
-* Náº¯m vá»¯ng cÃ¡c bÆ°á»›c dá»n dáº¹p credentials Ä‘á»ƒ Ä‘áº£m báº£o an toÃ n báº£o máº­t.
+* Làm quen với AWS CLI, hiểu được sự tương quan giữa các lệnh CLI và API của AWS.
+* Thực hiện cài đặt và cấu hình thành công AWS CLI trên hệ điều hành cá nhân (Windows, macOS hoặc Linux).
+* Quản lý an toàn credentials (Access key ID, Secret access key) thông qua thư mục `.aws` thay vì dùng root account.
+* Thực hành thao tác với đa dạng dịch vụ (IAM, S3, EC2) trực tiếp từ dòng lệnh.
+* Nắm vững các bước dọn dẹp credentials để đảm bảo an toàn bảo mật.
 
-### CÃ¡c cÃ´ng viá»‡c cáº§n triá»ƒn khai trong tuáº§n nÃ y:
-| Thá»© | CÃ´ng viá»‡c                                                                                                                                                                                   | NgÃ y báº¯t Ä‘áº§u | NgÃ y hoÃ n thÃ nh | Nguá»“n tÃ i liá»‡u                            |
+### Các công việc cần triển khai trong tuần này:
+| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - **Learning Content:** <br>&emsp; + Tá»•ng quan vá» AWS CLI: CÃ´ng cá»¥ dÃ²ng lá»‡nh quáº£n lÃ½ AWS tá»« terminal thay cho web console, há»— trá»£ tá»‘t cho tá»± Ä‘á»™ng hÃ³a vÃ  DevOps. Má»—i lá»‡nh CLI tÆ°Æ¡ng á»©ng má»™t API cá»§a AWS. <br>&emsp; + IAM user & credentials: YÃªu cáº§u báº¯t buá»™c dÃ¹ng IAM user (Access Key ID / Secret Access Key), khÃ´ng dÃ¹ng root account. Credentials Ä‘Æ°á»£c lÆ°u cá»¥c bá»™ Ä‘á»ƒ CLI xÃ¡c thá»±c. | 18/06/2026   | 18/06/2026      | <https://000011.awsstudygroup.com/> |
-| 3   | - **Learning Content:** <br>&emsp; + CÃ¡ch cáº¥u hÃ¬nh AWS CLI: DÃ¹ng lá»‡nh `configure` Ä‘á»ƒ thiáº¿t láº­p Access key, region vÃ  format. CLI tá»± Ä‘á»™ng Ä‘á»c credentials tá»« thÆ° má»¥c config mÃ¡y local. <br>&emsp; + CÃ¡c lá»‡nh cÆ¡ báº£n: Kiá»ƒm tra version, danh tÃ­nh IAM (`sts get-caller-identity`); thao tÃ¡c S3 (liá»‡t kÃª, táº¡o, xÃ³a); thao tÃ¡c EC2 (liá»‡t kÃª regions/instances); thao tÃ¡c IAM (liá»‡t kÃª user/policies). | 19/06/2026   | 19/06/2026      | <https://000011.awsstudygroup.com/> |
-| 4   | - **Practice:** <br>&emsp; + Chuáº©n bá»‹ IAM user & credentials: Táº¡o IAM user cho CLI, táº¡o Access Key (use case CLI), lÆ°u láº¡i ID/Secret Key vÃ  region lab. <br>&emsp; + CÃ i Ä‘áº·t AWS CLI: Táº£i vÃ  cÃ i Ä‘áº·t theo há»‡ Ä‘iá»u hÃ nh (Windows, macOS, Linux). Cháº¡y thá»­ kiá»ƒm tra phiÃªn báº£n trÃªn terminal Ä‘á»ƒ xÃ¡c nháº­n. <br>&emsp; + Cáº¥u hÃ¬nh láº§n Ä‘áº§u: Cháº¡y `aws configure` nháº­p credentials, region, output format vÃ  kiá»ƒm tra file cáº¥u hÃ¬nh. | 20/06/2026   | 20/06/2026      | <https://000011.awsstudygroup.com/> |
-| 5   | - **Practice:** <br>&emsp; + Kiá»ƒm tra danh tÃ­nh: Cháº¡y lá»‡nh IAM xÃ¡c nháº­n account ID vÃ  ARN khá»›p vá»›i lab. <br>&emsp; + Thao tÃ¡c S3: DÃ¹ng CLI liá»‡t kÃª buckets hiá»‡n cÃ³, táº¡o má»™t S3 bucket má»›i (náº¿u lab yÃªu cáº§u) vÃ  xÃ¡c minh láº¡i báº±ng lá»‡nh liá»‡t kÃª. <br>&emsp; + Thao tÃ¡c EC2: DÃ¹ng CLI liá»‡t kÃª regions, liá»‡t kÃª EC2 instances trong region Ä‘ang dÃ¹ng, xem thÃ´ng tin má»™t instance cá»¥ thá»ƒ. | 21/06/2026   | 21/06/2026      | <https://000011.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Thao tÃ¡c IAM: DÃ¹ng CLI liá»‡t kÃª cÃ¡c IAM user, kiá»ƒm tra policies Ä‘Æ°á»£c gáº¯n vÃ o user hiá»‡n táº¡i Ä‘á»ƒ xÃ¡c minh quyá»n háº¡n theo lab. <br>&emsp; + Dá»n dáº¹p: XÃ³a Access Key trÃªn AWS Console Ä‘á»ƒ Ä‘áº£m báº£o an toÃ n náº¿u dÃ¹ng mÃ¡y public; xÃ³a file cáº¥u hÃ¬nh cá»¥c bá»™ náº¿u khÃ´ng muá»‘n giá»¯ credentials. | 22/06/2026   | 22/06/2026      | <https://000011.awsstudygroup.com/> |
+| 2   | - **Learning Content:** <br>&emsp; + Tổng quan về AWS CLI: Công cụ dòng lệnh quản lý AWS từ terminal thay cho web console, hỗ trợ tốt cho tự động hóa và DevOps. Mỗi lệnh CLI tương ứng một API của AWS. <br>&emsp; + IAM user & credentials: Yêu cầu bắt buộc dùng IAM user (Access Key ID / Secret Access Key), không dùng root account. Credentials được lưu cục bộ để CLI xác thực. | 18/06/2026   | 18/06/2026      | <https://000011.awsstudygroup.com/> |
+| 3   | - **Learning Content:** <br>&emsp; + Cách cấu hình AWS CLI: Dùng lệnh `configure` để thiết lập Access key, region và format. CLI tự động đọc credentials từ thư mục config máy local. <br>&emsp; + Các lệnh cơ bản: Kiểm tra version, danh tính IAM (`sts get-caller-identity`); thao tác S3 (liệt kê, tạo, xóa); thao tác EC2 (liệt kê regions/instances); thao tác IAM (liệt kê user/policies). | 19/06/2026   | 19/06/2026      | <https://000011.awsstudygroup.com/> |
+| 4   | - **Practice:** <br>&emsp; + Chuẩn bị IAM user & credentials: Tạo IAM user cho CLI, tạo Access Key (use case CLI), lưu lại ID/Secret Key và region lab. <br>&emsp; + Cài đặt AWS CLI: Tải và cài đặt theo hệ điều hành (Windows, macOS, Linux). Chạy thử kiểm tra phiên bản trên terminal để xác nhận. <br>&emsp; + Cấu hình lần đầu: Chạy `aws configure` nhập credentials, region, output format và kiểm tra file cấu hình. | 20/06/2026   | 20/06/2026      | <https://000011.awsstudygroup.com/> |
+| 5   | - **Practice:** <br>&emsp; + Kiểm tra danh tính: Chạy lệnh IAM xác nhận account ID và ARN khớp với lab. <br>&emsp; + Thao tác S3: Dùng CLI liệt kê buckets hiện có, tạo một S3 bucket mới (nếu lab yêu cầu) và xác minh lại bằng lệnh liệt kê. <br>&emsp; + Thao tác EC2: Dùng CLI liệt kê regions, liệt kê EC2 instances trong region đang dùng, xem thông tin một instance cụ thể. | 21/06/2026   | 21/06/2026      | <https://000011.awsstudygroup.com/> |
+| 6   | - **Practice:** <br>&emsp; + Thao tác IAM: Dùng CLI liệt kê các IAM user, kiểm tra policies được gắn vào user hiện tại để xác minh quyền hạn theo lab. <br>&emsp; + Dọn dẹp: Xóa Access Key trên AWS Console để đảm bảo an toàn nếu dùng máy public; xóa file cấu hình cục bộ nếu không muốn giữ credentials. | 22/06/2026   | 22/06/2026      | <https://000011.awsstudygroup.com/> |
 
-### Káº¿t quáº£ Ä‘áº¡t Ä‘Æ°á»£c tuáº§n 8:
+### Kết quả đạt được tuần 8:
 
-* HoÃ n thÃ nh thao tÃ¡c cÃ i Ä‘áº·t vÃ  cáº¥u hÃ¬nh AWS CLI phÃ¹ há»£p vá»›i mÃ´i trÆ°á»ng há»‡ Ä‘iá»u hÃ nh cÃ¡ nhÃ¢n.
-* Hiá»ƒu rÃµ cÆ¡ cháº¿ xÃ¡c thá»±c qua Access key vÃ  Secret key, Ä‘áº£m báº£o thá»±c hÃ nh chuáº©n báº£o máº­t khi lÃ m viá»‡c vá»›i AWS.
-* Tá»± tin quáº£n lÃ½ tÃ i nguyÃªn tá»« xa báº±ng CLI vá»›i nhiá»u dá»‹ch vá»¥ phá»• biáº¿n (Amazon S3, Amazon EC2, IAM).
-* RÃ¨n luyá»‡n ká»¹ nÄƒng Ä‘á»c hiá»ƒu káº¿t quáº£ Ä‘áº§u ra (output JSON) vÃ  Ã¡p dá»¥ng tham sá»‘ `--query` Ä‘á»ƒ trÃ­ch xuáº¥t dá»¯ liá»‡u mong muá»‘n.
-* XÃ¢y dá»±ng thÃ³i quen tá»‘t vá» quáº£n trá»‹ rá»§i ro báº±ng viá»‡c vÃ´ hiá»‡u hÃ³a hoáº·c xÃ³a credentials cá»¥c bá»™ sau khi káº¿t thÃºc dá»± Ã¡n.
+* Hoàn thành thao tác cài đặt và cấu hình AWS CLI phù hợp với môi trường hệ điều hành cá nhân.
+* Hiểu rõ cơ chế xác thực qua Access key và Secret key, đảm bảo thực hành chuẩn bảo mật khi làm việc với AWS.
+* Tự tin quản lý tài nguyên từ xa bằng CLI với nhiều dịch vụ phổ biến (Amazon S3, Amazon EC2, IAM).
+* Rèn luyện kỹ năng đọc hiểu kết quả đầu ra (output JSON) và áp dụng tham số `--query` để trích xuất dữ liệu mong muốn.
+* Xây dựng thói quen tốt về quản trị rủi ro bằng việc vô hiệu hóa hoặc xóa credentials cục bộ sau khi kết thúc dự án.
 

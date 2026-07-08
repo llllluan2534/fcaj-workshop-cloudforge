@@ -1,32 +1,32 @@
 ---
-title: "Worklog Tuáº§n 4"
-date: 2026-04-17
+title: "Worklog Tuần 4"
+date: 2024-01-01
 weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-### Má»¥c tiÃªu tuáº§n 4:
+### Mục tiêu tuần 4:
 
-* Hiá»ƒu sÃ¢u sáº¯c vá» kiáº¿n trÃºc vÃ  Æ°u Ä‘iá»ƒm cá»§a dá»‹ch vá»¥ cÆ¡ sá»Ÿ dá»¯ liá»‡u quan há»‡ Ä‘Æ°á»£c quáº£n lÃ½ (Managed Relational Database) - Amazon RDS.
-* Náº¯m vá»¯ng cÃ¡c mÃ´ hÃ¬nh triá»ƒn khai DB instance, cÃ¡ch lá»±a chá»n Database Engine phÃ¹ há»£p (MySQL, PostgreSQL, MariaDB, Oracle, SQL Server).
-* Thá»±c hÃ nh táº¡o, cáº¥u hÃ¬nh vÃ  káº¿t ná»‘i an toÃ n Ä‘áº¿n Amazon RDS tá»« cÃ¡c mÃ´i trÆ°á»ng máº¡ng (VPC).
-* Hiá»ƒu rÃµ cÆ¡ cháº¿ báº£o máº­t cÆ¡ sá»Ÿ dá»¯ liá»‡u trÃªn cloud thÃ´ng qua Security Group vÃ  Network ACLs.
-* RÃ¨n luyá»‡n ká»¹ nÄƒng quáº£n trá»‹ chi phÃ­ thÃ´ng qua viá»‡c dá»n dáº¹p vÃ  xÃ³a bá» tÃ i nguyÃªn khÃ´ng sá»­ dá»¥ng.
+* Hiểu sâu sắc về kiến trúc và ưu điểm của dịch vụ cơ sở dữ liệu quan hệ được quản lý (Managed Relational Database) - Amazon RDS.
+* Nắm vững các mô hình triển khai DB instance, cách lựa chọn Database Engine phù hợp (MySQL, PostgreSQL, MariaDB, Oracle, SQL Server).
+* Thực hành tạo, cấu hình và kết nối an toàn đến Amazon RDS từ các môi trường mạng (VPC).
+* Hiểu rõ cơ chế bảo mật cơ sở dữ liệu trên cloud thông qua Security Group và Network ACLs.
+* Rèn luyện kỹ năng quản trị chi phí thông qua việc dọn dẹp và xóa bỏ tài nguyên không sử dụng.
 
-### CÃ¡c cÃ´ng viá»‡c cáº§n triá»ƒn khai trong tuáº§n nÃ y:
-| Thá»© | CÃ´ng viá»‡c                                                                                                                                                                                   | NgÃ y báº¯t Ä‘áº§u | NgÃ y hoÃ n thÃ nh | Nguá»“n tÃ i liá»‡u                            |
+### Các công việc cần triển khai trong tuần này:
+| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - **Learning Content:** <br>&emsp; + Tá»•ng quan vá» Amazon RDS: TÃ¬m hiá»ƒu cÃ¡ch AWS tá»± Ä‘á»™ng hÃ³a cÃ¡c tÃ¡c vá»¥ quáº£n trá»‹ náº·ng ná» nhÆ° provisioning, patch há»‡ Ä‘iá»u hÃ nh, backup vÃ  monitoring. <br>&emsp; + Kiáº¿n trÃºc DB instance: MÃ´i trÆ°á»ng database Ä‘á»™c láº­p trÃªn cloud, linh hoáº¡t lá»±a chá»n cáº¥u hÃ¬nh compute vÃ  storage. | 07/05/2026   | 07/05/2026      | <https://000005.awsstudygroup.com/>       |
-| 3   | - **Learning Content:** <br>&emsp; + CÃ¡c Database Engine Ä‘Æ°á»£c há»— trá»£: ÄÃ¡nh giÃ¡ Æ°u nhÆ°á»£c Ä‘iá»ƒm cá»§a MySQL, PostgreSQL, MariaDB, SQL Server, vÃ  Oracle. <br>&emsp; + CÆ¡ cháº¿ káº¿t ná»‘i: Kiáº¿n trÃºc máº¡ng trong VPC, vai trÃ² cá»§a endpoint vÃ  port khi káº¿t ná»‘i tá»« á»©ng dá»¥ng hoáº·c client. | 08/05/2026   | 08/05/2026      | <https://000005.awsstudygroup.com/>       |
-| 4   | - **Learning Content:** <br>&emsp; + Báº£o máº­t vÃ  phÃ¢n quyá»n truy cáº­p: Táº§m quan trá»ng cá»§a viá»‡c cÃ´ láº­p database trong private subnet. <br>&emsp; + Dá»n dáº¹p tÃ i nguyÃªn: Hiá»ƒu vÃ²ng Ä‘á»i cá»§a DB instance, snapshot vÃ  cÃ¡ch quáº£n lÃ½ chi phÃ­ lÃ¢u dÃ i. | 09/05/2026   | 09/05/2026      | <https://000005.awsstudygroup.com/>       |
-| 5   | - **Practice:** <br>&emsp; + Chuáº©n bá»‹ mÃ´i trÆ°á»ng: Kháº£o sÃ¡t vÃ  cáº¥u hÃ¬nh VPC, Subnet, Security Group Ä‘áº£m báº£o kiáº¿n trÃºc máº¡ng an toÃ n. <br>&emsp; + Khá»Ÿi táº¡o DB instance: Chá»n engine (vÃ­ dá»¥ MySQL), thiáº¿t láº­p username/password gá»‘c, chá»‰ Ä‘á»‹nh network vÃ  security group, sau Ä‘Ã³ chá» instance chuyá»ƒn sang tráº¡ng thÃ¡i Available. | 10/05/2026   | 10/05/2026      | <https://000005.awsstudygroup.com/>       |
-| 6   | - **Practice:** <br>&emsp; + Káº¿t ná»‘i vÃ o database: Láº¥y endpoint tá»« console, dÃ¹ng tool (nhÆ° MySQL Workbench, DBeaver hoáº·c terminal) Ä‘á»ƒ káº¿t ná»‘i vÃ  cháº¡y thá»­ cÃ¡c truy váº¥n SQL cÆ¡ báº£n. <br>&emsp; + Tá»‘i Æ°u báº£o máº­t: Tinh chá»‰nh Security Group chá»‰ má»Ÿ port cho nhá»¯ng IP/Instance cáº§n thiáº¿t. <br>&emsp; + Resource Cleanup: XÃ³a toÃ n bá»™ DB instance vÃ  cÃ¡c manual snapshot Ä‘i kÃ¨m Ä‘á»ƒ tá»‘i Æ°u hÃ³a chi phÃ­. | 11/05/2026   | 11/05/2026      | <https://000005.awsstudygroup.com/>       |
+| 2   | - **Learning Content:** <br>&emsp; + Tổng quan về Amazon RDS: Tìm hiểu cách AWS tự động hóa các tác vụ quản trị nặng nề như provisioning, patch hệ điều hành, backup và monitoring. <br>&emsp; + Kiến trúc DB instance: Môi trường database độc lập trên cloud, linh hoạt lựa chọn cấu hình compute và storage. | 07/05/2026   | 07/05/2026      | <https://000005.awsstudygroup.com/>       |
+| 3   | - **Learning Content:** <br>&emsp; + Các Database Engine được hỗ trợ: Đánh giá ưu nhược điểm của MySQL, PostgreSQL, MariaDB, SQL Server, và Oracle. <br>&emsp; + Cơ chế kết nối: Kiến trúc mạng trong VPC, vai trò của endpoint và port khi kết nối từ ứng dụng hoặc client. | 08/05/2026   | 08/05/2026      | <https://000005.awsstudygroup.com/>       |
+| 4   | - **Learning Content:** <br>&emsp; + Bảo mật và phân quyền truy cập: Tầm quan trọng của việc cô lập database trong private subnet. <br>&emsp; + Dọn dẹp tài nguyên: Hiểu vòng đời của DB instance, snapshot và cách quản lý chi phí lâu dài. | 09/05/2026   | 09/05/2026      | <https://000005.awsstudygroup.com/>       |
+| 5   | - **Practice:** <br>&emsp; + Chuẩn bị môi trường: Khảo sát và cấu hình VPC, Subnet, Security Group đảm bảo kiến trúc mạng an toàn. <br>&emsp; + Khởi tạo DB instance: Chọn engine (ví dụ MySQL), thiết lập username/password gốc, chỉ định network và security group, sau đó chờ instance chuyển sang trạng thái Available. | 10/05/2026   | 10/05/2026      | <https://000005.awsstudygroup.com/>       |
+| 6   | - **Practice:** <br>&emsp; + Kết nối vào database: Lấy endpoint từ console, dùng tool (như MySQL Workbench, DBeaver hoặc terminal) để kết nối và chạy thử các truy vấn SQL cơ bản. <br>&emsp; + Tối ưu bảo mật: Tinh chỉnh Security Group chỉ mở port cho những IP/Instance cần thiết. <br>&emsp; + Resource Cleanup: Xóa toàn bộ DB instance và các manual snapshot đi kèm để tối ưu hóa chi phí. | 11/05/2026   | 11/05/2026      | <https://000005.awsstudygroup.com/>       |
 
 
-### Káº¿t quáº£ Ä‘áº¡t Ä‘Æ°á»£c tuáº§n 4:
+### Kết quả đạt được tuần 4:
 
-* Hiá»ƒu vÃ  váº­n dá»¥ng thÃ nh tháº¡o dá»‹ch vá»¥ Amazon RDS Ä‘á»ƒ thiáº¿t láº­p cÆ¡ sá»Ÿ dá»¯ liá»‡u quan há»‡ trÃªn mÃ´i trÆ°á»ng AWS.
-* CÃ³ kháº£ nÄƒng lÃªn káº¿ hoáº¡ch máº¡ng vÃ  báº£o máº­t cháº·t cháº½ cho database báº±ng cÃ¡ch sá»­ dá»¥ng VPC, Subnet, vÃ  Security Group.
-* Khá»Ÿi táº¡o thÃ nh cÃ´ng DB instance vÃ  thá»±c hiá»‡n káº¿t ná»‘i, truy váº¥n dá»¯ liá»‡u thÃ´ng qua cÃ¡c cÃ´ng cá»¥ quáº£n trá»‹ phá»• biáº¿n.
-* Tháº¥u hiá»ƒu sÃ¢u sáº¯c cÃ¡c nguyÃªn táº¯c báº£o máº­t: KhÃ´ng bao giá» má»Ÿ public access cho database trá»« khi báº¯t buá»™c, vÃ  tuÃ¢n thá»§ nguyÃªn táº¯c least privilege.
-* HoÃ n thÃ nh xuáº¥t sáº¯c khÃ¢u dá»n dáº¹p (cleanup), Ä‘áº£m báº£o khÃ´ng Ä‘á»ƒ láº¡i tÃ i nguyÃªn rÃ¡c gÃ¢y lÃ£ng phÃ­ ngÃ¢n sÃ¡ch.
+* Hiểu và vận dụng thành thạo dịch vụ Amazon RDS để thiết lập cơ sở dữ liệu quan hệ trên môi trường AWS.
+* Có khả năng lên kế hoạch mạng và bảo mật chặt chẽ cho database bằng cách sử dụng VPC, Subnet, và Security Group.
+* Khởi tạo thành công DB instance và thực hiện kết nối, truy vấn dữ liệu thông qua các công cụ quản trị phổ biến.
+* Thấu hiểu sâu sắc các nguyên tắc bảo mật: Không bao giờ mở public access cho database trừ khi bắt buộc, và tuân thủ nguyên tắc least privilege.
+* Hoàn thành xuất sắc khâu dọn dẹp (cleanup), đảm bảo không để lại tài nguyên rác gây lãng phí ngân sách.

@@ -1,84 +1,84 @@
 ---
 title: "Blog 3"
-date: 2026-04-17
+date: 2024-01-01
 weight: 1
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
 {{% notice warning %}}
-âš ï¸ **LÆ°u Ã½:** CÃ¡c thÃ´ng tin dÆ°á»›i Ä‘Ã¢y chá»‰ nháº±m má»¥c Ä‘Ã­ch tham kháº£o, vui lÃ²ng **khÃ´ng sao chÃ©p nguyÃªn vÄƒn** cho bÃ i bÃ¡o cÃ¡o cá»§a báº¡n ká»ƒ cáº£ warning nÃ y.
+⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
 {{% /notice %}}
 
-# AI vÃ  Robot Ä‘ang thay Ä‘á»•i nÃ´ng nghiá»‡p bá»n vá»¯ng nhÆ° tháº¿ nÃ o vá»›i Amazon SageMaker AI?
+# AI và Robot đang thay đổi nông nghiệp bền vững như thế nào với Amazon SageMaker AI?
 
-HÃ´m nay mÃ¬nh muá»‘n chia sáº» má»™t bÃ i khÃ¡ thÃº vá»‹ tá»« AWS Architecture Blog vá» cÃ¡ch Aigen - má»™t cÃ´ng ty phÃ¡t triá»ƒn robot nÃ´ng nghiá»‡p tá»± hÃ nh - Ä‘Ã£ hiá»‡n Ä‘áº¡i hÃ³a toÃ n bá»™ pipeline AI báº±ng Amazon SageMaker AI Ä‘á»ƒ xÃ¢y dá»±ng há»‡ thá»‘ng canh tÃ¡c thÃ´ng minh vÃ  bá»n vá»¯ng.
+Hôm nay mình muốn chia sẻ một bài khá thú vị từ AWS Architecture Blog về cách Aigen - một công ty phát triển robot nông nghiệp tự hành - đã hiện đại hóa toàn bộ pipeline AI bằng Amazon SageMaker AI để xây dựng hệ thống canh tác thông minh và bền vững.
 
-Trong nÃ´ng nghiá»‡p hiá»‡n Ä‘áº¡i, viá»‡c sá»­ dá»¥ng robot Ä‘á»ƒ nháº­n diá»‡n cá» dáº¡i, theo dÃµi cÃ¢y trá»“ng hay tá»‘i Æ°u nÄƒng suáº¥t khÃ´ng cÃ²n quÃ¡ xa láº¡. Tuy nhiÃªn, khi sá»‘ lÆ°á»£ng robot ngÃ y cÃ ng tÄƒng thÃ¬ bÃ i toÃ¡n má»›i láº¡i xuáº¥t hiá»‡n:
-* Robot hoáº¡t Ä‘á»™ng á»Ÿ nhá»¯ng khu vá»±c cÃ³ káº¿t ná»‘i Internet khÃ´ng á»•n Ä‘á»‹nh.
-* Má»—i ngÃ y thu tháº­p hÃ ng nghÃ¬n hÃ¬nh áº£nh cáº§n gÃ¡n nhÃ£n Ä‘á»ƒ huáº¥n luyá»‡n AI.
-* Háº¡ táº§ng GPU táº¡i chá»— (on-premises) khÃ´ng Ä‘á»§ sá»©c xá»­ lÃ½ Ä‘á»“ng thá»i viá»‡c huáº¥n luyá»‡n mÃ´ hÃ¬nh vÃ  gÃ¡n nhÃ£n dá»¯ liá»‡u.
-* Chu ká»³ cáº­p nháº­t mÃ´ hÃ¬nh cháº­m khiáº¿n robot khÃ³ thÃ­ch nghi vá»›i Ä‘iá»u kiá»‡n thá»±c táº¿ ngoÃ i Ä‘á»“ng ruá»™ng.
-* LÃ m sao Ä‘á»ƒ má»Ÿ rá»™ng hÃ ng trÄƒm robot ngoÃ i thá»±c Ä‘á»‹a mÃ  khÃ´ng pháº£i liÃªn tá»¥c Ä‘áº§u tÆ° thÃªm mÃ¡y chá»§ GPU?
+Trong nông nghiệp hiện đại, việc sử dụng robot để nhận diện cỏ dại, theo dõi cây trồng hay tối ưu năng suất không còn quá xa lạ. Tuy nhiên, khi số lượng robot ngày càng tăng thì bài toán mới lại xuất hiện:
+* Robot hoạt động ở những khu vực có kết nối Internet không ổn định.
+* Mỗi ngày thu thập hàng nghìn hình ảnh cần gán nhãn để huấn luyện AI.
+* Hạ tầng GPU tại chỗ (on-premises) không đủ sức xử lý đồng thời việc huấn luyện mô hình và gán nhãn dữ liệu.
+* Chu kỳ cập nhật mô hình chậm khiến robot khó thích nghi với điều kiện thực tế ngoài đồng ruộng.
+* Làm sao để mở rộng hàng trăm robot ngoài thực địa mà không phải liên tục đầu tư thêm máy chủ GPU?
 
-AWS vÃ  Aigen Ä‘Ã£ giáº£i quyáº¿t bÃ i toÃ¡n nÃ y báº±ng má»™t kiáº¿n trÃºc AI cloud-native.
+AWS và Aigen đã giải quyết bài toán này bằng một kiến trúc AI cloud-native.
 
 ![Aigen Architecture](/images/blog_3.jpg)
 
-### 1. Kiáº¿n trÃºc hoáº¡t Ä‘á»™ng nhÆ° tháº¿ nÃ o?
-Robot sáº½ thu tháº­p dá»¯ liá»‡u trá»±c tiáº¿p ngoÃ i cÃ¡nh Ä‘á»“ng, bao gá»“m:
-* HÃ¬nh áº£nh RGB vÃ  chiá»u sÃ¢u (Depth)
-* Dá»¯ liá»‡u Ä‘iá»u hÆ°á»›ng
-* ThÃ´ng tin cáº£m biáº¿n
-* Metadata cá»§a tá»«ng nhiá»‡m vá»¥
+### 1. Kiến trúc hoạt động như thế nào?
+Robot sẽ thu thập dữ liệu trực tiếp ngoài cánh đồng, bao gồm:
+* Hình ảnh RGB và chiều sâu (Depth)
+* Dữ liệu điều hướng
+* Thông tin cảm biến
+* Metadata của từng nhiệm vụ
 
-Sau Ä‘Ã³ dá»¯ liá»‡u Ä‘Æ°á»£c gá»­i lÃªn Amazon S3 thÃ´ng qua AWS IoT Core.
-Tiáº¿p theo, Amazon SageMaker AI Ä‘áº£m nhiá»‡m gáº§n nhÆ° toÃ n bá»™ pipeline Machine Learning:
-* Tiá»n xá»­ lÃ½ dá»¯ liá»‡u.
-* Tá»± Ä‘á»™ng gÃ¡n nhÃ£n báº±ng cÃ¡c mÃ´ hÃ¬nh thá»‹ giÃ¡c mÃ¡y tÃ­nh.
-* Chá»‰ chuyá»ƒn nhá»¯ng áº£nh quan trá»ng cho con ngÆ°á»i kiá»ƒm tra (Human-in-the-loop).
-* Huáº¥n luyá»‡n mÃ´ hÃ¬nh má»›i trÃªn cá»¥m GPU cá»§a SageMaker.
-* Triá»ƒn khai mÃ´ hÃ¬nh tá»‘i Æ°u trá»Ÿ láº¡i robot ngoÃ i thá»±c Ä‘á»‹a.
+Sau đó dữ liệu được gửi lên Amazon S3 thông qua AWS IoT Core.
+Tiếp theo, Amazon SageMaker AI đảm nhiệm gần như toàn bộ pipeline Machine Learning:
+* Tiền xử lý dữ liệu.
+* Tự động gán nhãn bằng các mô hình thị giác máy tính.
+* Chỉ chuyển những ảnh quan trọng cho con người kiểm tra (Human-in-the-loop).
+* Huấn luyện mô hình mới trên cụm GPU của SageMaker.
+* Triển khai mô hình tối ưu trở lại robot ngoài thực địa.
 
-Äiá»ƒm mÃ¬nh tháº¥y hay lÃ  AWS xÃ¢y dá»±ng má»™t vÃ²ng láº·p há»c liÃªn tá»¥c (continuous learning): robot thu tháº­p dá»¯ liá»‡u â†’ AI há»c tá»« dá»¯ liá»‡u má»›i â†’ mÃ´ hÃ¬nh Ä‘Æ°á»£c cáº£i thiá»‡n â†’ robot hoáº¡t Ä‘á»™ng chÃ­nh xÃ¡c hÆ¡n trong cÃ¡c mÃ¹a vá»¥ tiáº¿p theo.
+Điểm mình thấy hay là AWS xây dựng một vòng lặp học liên tục (continuous learning): robot thu thập dữ liệu → AI học từ dữ liệu mới → mô hình được cải thiện → robot hoạt động chính xác hơn trong các mùa vụ tiếp theo.
 
-### 2. Äiá»u gÃ¬ giÃºp giáº£m chi phÃ­ gÃ¡n nhÃ£n?
-Má»™t trong nhá»¯ng Ä‘iá»ƒm ná»•i báº­t cá»§a giáº£i phÃ¡p lÃ  Active Learning.
-Thay vÃ¬ yÃªu cáº§u con ngÆ°á»i gÃ¡n nhÃ£n toÃ n bá»™ hÃ ng triá»‡u bá»©c áº£nh, há»‡ thá»‘ng AI sáº½:
-* Tá»± Ä‘á»™ng gÃ¡n nhÃ£n trÆ°á»›c.
-* Chá»‰ chá»n nhá»¯ng hÃ¬nh áº£nh mÃ  mÃ´ hÃ¬nh chÆ°a cháº¯c cháº¯n Ä‘á»ƒ con ngÆ°á»i kiá»ƒm tra.
-* DÃ¹ng cÃ¡c dá»¯ liá»‡u Ä‘Ã£ xÃ¡c nháº­n Ä‘á»ƒ tiáº¿p tá»¥c cáº£i thiá»‡n mÃ´ hÃ¬nh.
+### 2. Điều gì giúp giảm chi phí gán nhãn?
+Một trong những điểm nổi bật của giải pháp là Active Learning.
+Thay vì yêu cầu con người gán nhãn toàn bộ hàng triệu bức ảnh, hệ thống AI sẽ:
+* Tự động gán nhãn trước.
+* Chỉ chọn những hình ảnh mà mô hình chưa chắc chắn để con người kiểm tra.
+* Dùng các dữ liệu đã xác nhận để tiếp tục cải thiện mô hình.
 
-Nhá» Ä‘Ã³, Aigen vá»«a giáº£m Ä‘Ã¡ng ká»ƒ khá»‘i lÆ°á»£ng cÃ´ng viá»‡c thá»§ cÃ´ng, vá»«a nÃ¢ng cao cháº¥t lÆ°á»£ng dá»¯ liá»‡u huáº¥n luyá»‡n.
+Nhờ đó, Aigen vừa giảm đáng kể khối lượng công việc thủ công, vừa nâng cao chất lượng dữ liệu huấn luyện.
 
-### 3. Use Case 1: Robot nháº­n diá»‡n vÃ  loáº¡i bá» cá» dáº¡i
-Má»™t trong nhá»¯ng á»©ng dá»¥ng chÃ­nh cá»§a Aigen lÃ  phÃ¡t hiá»‡n cá» dáº¡i ngay trÃªn cÃ¡nh Ä‘á»“ng.
-Robot sá»­ dá»¥ng Computer Vision Ä‘á»ƒ phÃ¢n biá»‡t cÃ¢y trá»“ng vÃ  cá» dáº¡i theo thá»i gian thá»±c, sau Ä‘Ã³ loáº¡i bá» cá» mÃ  khÃ´ng cáº§n phun thuá»‘c diá»‡t cá» trÃªn diá»‡n rá»™ng.
-CÃ¡ch tiáº¿p cáº­n nÃ y giÃºp:
-* Giáº£m lÆ°á»£ng hÃ³a cháº¥t sá»­ dá»¥ng.
-* Báº£o vá»‡ Ä‘áº¥t vÃ  nguá»“n nÆ°á»›c.
-* Tiáº¿t kiá»‡m chi phÃ­ cho nÃ´ng dÃ¢n.
-* Háº¡n cháº¿ tÃ¬nh tráº¡ng cá» khÃ¡ng thuá»‘c.
+### 3. Use Case 1: Robot nhận diện và loại bỏ cỏ dại
+Một trong những ứng dụng chính của Aigen là phát hiện cỏ dại ngay trên cánh đồng.
+Robot sử dụng Computer Vision để phân biệt cây trồng và cỏ dại theo thời gian thực, sau đó loại bỏ cỏ mà không cần phun thuốc diệt cỏ trên diện rộng.
+Cách tiếp cận này giúp:
+* Giảm lượng hóa chất sử dụng.
+* Bảo vệ đất và nguồn nước.
+* Tiết kiệm chi phí cho nông dân.
+* Hạn chế tình trạng cỏ kháng thuốc.
 
-### 4. Use Case 2: LiÃªn tá»¥c cáº£i thiá»‡n mÃ´ hÃ¬nh AI
-Äiá»u kiá»‡n ngoÃ i thá»±c Ä‘á»‹a luÃ´n thay Ä‘á»•i:
-* Ãnh sÃ¡ng khÃ¡c nhau.
-* Äáº¥t khÃ¡c nhau.
-* Giá»‘ng cÃ¢y khÃ¡c nhau.
-* MÃ¹a vá»¥ khÃ¡c nhau.
+### 4. Use Case 2: Liên tục cải thiện mô hình AI
+Điều kiện ngoài thực địa luôn thay đổi:
+* Ánh sáng khác nhau.
+* Đất khác nhau.
+* Giống cây khác nhau.
+* Mùa vụ khác nhau.
 
-Náº¿u mÃ´ hÃ¬nh khÃ´ng Ä‘Æ°á»£c cáº­p nháº­t thÆ°á»ng xuyÃªn thÃ¬ Ä‘á»™ chÃ­nh xÃ¡c sáº½ giáº£m.
-Vá»›i Amazon SageMaker AI, dá»¯ liá»‡u má»›i Ä‘Æ°á»£c Ä‘Æ°a vÃ o pipeline Ä‘á»ƒ huáº¥n luyá»‡n láº¡i mÃ´ hÃ¬nh nhanh chÃ³ng, sau Ä‘Ã³ triá»ƒn khai ngÆ°á»£c trá»Ÿ láº¡i robot. Äiá»u nÃ y giÃºp há»‡ thá»‘ng thÃ­ch nghi tá»‘t hÆ¡n vá»›i tá»«ng cÃ¡nh Ä‘á»“ng vÃ  tá»«ng mÃ¹a vá»¥ mÃ  khÃ´ng bá»‹ giá»›i háº¡n bá»Ÿi háº¡ táº§ng GPU ná»™i bá»™.
+Nếu mô hình không được cập nhật thường xuyên thì độ chính xác sẽ giảm.
+Với Amazon SageMaker AI, dữ liệu mới được đưa vào pipeline để huấn luyện lại mô hình nhanh chóng, sau đó triển khai ngược trở lại robot. Điều này giúp hệ thống thích nghi tốt hơn với từng cánh đồng và từng mùa vụ mà không bị giới hạn bởi hạ tầng GPU nội bộ.
 
-### 5. Káº¿t quáº£ Ä‘áº¡t Ä‘Æ°á»£c
-Theo AWS, sau khi chuyá»ƒn sang Amazon SageMaker AI, Aigen ghi nháº­n má»™t sá»‘ cáº£i thiá»‡n Ä‘Ã¡ng chÃº Ã½:
-* TÄƒng 20 láº§n nÄƒng suáº¥t xá»­ lÃ½ gÃ¡n nhÃ£n dá»¯ liá»‡u.
-* Giáº£m khoáº£ng 22,5 láº§n chi phÃ­ gÃ¡n nhÃ£n má»—i hÃ¬nh áº£nh.
-* CÃ³ thá»ƒ thá»±c hiá»‡n hÃ ng trÄƒm thÃ­ nghiá»‡m huáº¥n luyá»‡n má»—i tuáº§n thay vÃ¬ chá»‰ vÃ i láº§n nhÆ° trÆ°á»›c.
-* RÃºt ngáº¯n thá»i gian Ä‘Æ°a mÃ´ hÃ¬nh má»›i vÃ o robot tá»« vÃ i thÃ¡ng xuá»‘ng chá»‰ cÃ²n vÃ i tuáº§n.
+### 5. Kết quả đạt được
+Theo AWS, sau khi chuyển sang Amazon SageMaker AI, Aigen ghi nhận một số cải thiện đáng chú ý:
+* Tăng 20 lần năng suất xử lý gán nhãn dữ liệu.
+* Giảm khoảng 22,5 lần chi phí gán nhãn mỗi hình ảnh.
+* Có thể thực hiện hàng trăm thí nghiệm huấn luyện mỗi tuần thay vì chỉ vài lần như trước.
+* Rút ngắn thời gian đưa mô hình mới vào robot từ vài tháng xuống chỉ còn vài tuần.
 
-### 6. GÃ³c nhÃ¬n cÃ¡ nhÃ¢n
-Theo mÃ¬nh, Ä‘iá»ƒm Ä‘Ã¡ng há»c há»i tá»« kiáº¿n trÃºc nÃ y khÃ´ng chá»‰ lÃ  viá»‡c sá»­ dá»¥ng AI hay robot, mÃ  lÃ  thiáº¿t káº¿ má»™t pipeline Machine Learning cÃ³ kháº£ nÄƒng má»Ÿ rá»™ng.
-Thay vÃ¬ Ä‘áº§u tÆ° thÃªm GPU má»—i khi sá»‘ lÆ°á»£ng robot tÄƒng lÃªn, Aigen chuyá»ƒn toÃ n bá»™ quÃ¡ trÃ¬nh huáº¥n luyá»‡n vÃ  quáº£n lÃ½ mÃ´ hÃ¬nh lÃªn ná»n táº£ng cloud cá»§a AWS. Robot chá»‰ táº­p trung vÃ o viá»‡c thu tháº­p dá»¯ liá»‡u vÃ  suy luáº­n (inference) táº¡i biÃªn (edge), cÃ²n nhá»¯ng tÃ¡c vá»¥ náº·ng nhÆ° huáº¥n luyá»‡n, gÃ¡n nhÃ£n hay tá»‘i Æ°u mÃ´ hÃ¬nh Ä‘Æ°á»£c xá»­ lÃ½ trÃªn Ä‘Ã¡m mÃ¢y.
-ÄÃ¢y lÃ  má»™t vÃ­ dá»¥ ráº¥t hay vá» cÃ¡ch káº¿t há»£p AI + Robotics + Cloud Ä‘á»ƒ giáº£i quyáº¿t bÃ i toÃ¡n thá»±c táº¿ trong nÃ´ng nghiá»‡p thÃ´ng minh vÃ  phÃ¡t triá»ƒn bá»n vá»¯ng.
+### 6. Góc nhìn cá nhân
+Theo mình, điểm đáng học hỏi từ kiến trúc này không chỉ là việc sử dụng AI hay robot, mà là thiết kế một pipeline Machine Learning có khả năng mở rộng.
+Thay vì đầu tư thêm GPU mỗi khi số lượng robot tăng lên, Aigen chuyển toàn bộ quá trình huấn luyện và quản lý mô hình lên nền tảng cloud của AWS. Robot chỉ tập trung vào việc thu thập dữ liệu và suy luận (inference) tại biên (edge), còn những tác vụ nặng như huấn luyện, gán nhãn hay tối ưu mô hình được xử lý trên đám mây.
+Đây là một ví dụ rất hay về cách kết hợp AI + Robotics + Cloud để giải quyết bài toán thực tế trong nông nghiệp thông minh và phát triển bền vững.
 
-**Nguá»“n:** [AWS Architecture Blog â€“ How Aigen transformed agricultural robotics for sustainable farming with Amazon SageMaker AI](https://aws.amazon.com/blogs/architecture/how-aigen-transformed-agricultural-robotics-for-sustainable-farming-with-amazon-sagemaker-ai/)
+**Nguồn:** [AWS Architecture Blog – How Aigen transformed agricultural robotics for sustainable farming with Amazon SageMaker AI](https://aws.amazon.com/blogs/architecture/how-aigen-transformed-agricultural-robotics-for-sustainable-farming-with-amazon-sagemaker-ai/)
