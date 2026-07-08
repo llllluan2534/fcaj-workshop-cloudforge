@@ -1,4 +1,4 @@
-﻿---
+---
 
 title: "Worklog Tuáº§n 7"
 date: 2026-04-17

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Self-Assessment"
 date: 2026-04-17
 weight: 6

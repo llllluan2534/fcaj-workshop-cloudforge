@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Week 9 Worklog"
 date: 2026-04-17
 weight: 9

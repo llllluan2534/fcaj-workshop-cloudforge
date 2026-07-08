@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Proposal"
 date: 2026-04-17
 weight: 2

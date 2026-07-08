@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Worklog Tuáº§n 12"
 date: 2026-04-17
 weight: 12

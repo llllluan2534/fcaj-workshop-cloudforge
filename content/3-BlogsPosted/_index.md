@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Blogs Posted"
 date: 2026-04-17
 weight: 3
