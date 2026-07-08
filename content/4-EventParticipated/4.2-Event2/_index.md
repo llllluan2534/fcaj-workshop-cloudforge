@@ -1,12 +1,12 @@
----
+﻿---
 title: "Event 2"
-date: 2024-01-01
+date: 2026-04-17
 weight: 1
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-# Summary Report: “Cloud Architect”
+# Summary Report: â€œCloud Architectâ€
 
 ### Event Objectives
 
@@ -19,8 +19,8 @@ pre: " <b> 4.2. </b> "
 - **KTLT**
 - **YoungFlameIT**
 - **LOSERR**
-- **Ngũ Đại Hiệp**
-- **Gặp phải thằng lều**
+- **NgÅ© Äáº¡i Hiá»‡p**
+- **Gáº·p pháº£i tháº±ng lá»u**
 - **LIFE LONG LEARNER**
 - **newbie**
 

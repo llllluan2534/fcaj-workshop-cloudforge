@@ -1,33 +1,33 @@
----
-title: "Worklog Tuần 10"
-date: 2024-01-01
+﻿---
+title: "Worklog Tuáº§n 10"
+date: 2026-04-17
 weight: 10
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
 
 
-### Mục tiêu tuần 10:
+### Má»¥c tiÃªu tuáº§n 10:
 
-* Hiểu rõ khái niệm IAM role và ứng dụng của nó trong việc cấp quyền an toàn cho các dịch vụ AWS.
-* Nắm vững nguyên tắc cấp quyền tối thiểu (least privilege) để bảo vệ tài nguyên hiệu quả.
-* Thực hành tạo, gắn và kiểm tra IAM role trên EC2 instance.
-* Làm quen với AWS Cloud9, một môi trường IDE trên nền tảng đám mây.
-* Quản lý chi phí bằng cách vận hành và dọn dẹp tài nguyên (Cloud9, IAM role) hợp lý.
+* Hiá»ƒu rÃµ khÃ¡i niá»‡m IAM role vÃ  á»©ng dá»¥ng cá»§a nÃ³ trong viá»‡c cáº¥p quyá»n an toÃ n cho cÃ¡c dá»‹ch vá»¥ AWS.
+* Náº¯m vá»¯ng nguyÃªn táº¯c cáº¥p quyá»n tá»‘i thiá»ƒu (least privilege) Ä‘á»ƒ báº£o vá»‡ tÃ i nguyÃªn hiá»‡u quáº£.
+* Thá»±c hÃ nh táº¡o, gáº¯n vÃ  kiá»ƒm tra IAM role trÃªn EC2 instance.
+* LÃ m quen vá»›i AWS Cloud9, má»™t mÃ´i trÆ°á»ng IDE trÃªn ná»n táº£ng Ä‘Ã¡m mÃ¢y.
+* Quáº£n lÃ½ chi phÃ­ báº±ng cÃ¡ch váº­n hÃ nh vÃ  dá»n dáº¹p tÃ i nguyÃªn (Cloud9, IAM role) há»£p lÃ½.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
+### CÃ¡c cÃ´ng viá»‡c cáº§n triá»ƒn khai trong tuáº§n nÃ y:
+| Thá»© | CÃ´ng viá»‡c                                                                                                                                                                                   | NgÃ y báº¯t Ä‘áº§u | NgÃ y hoÃ n thÃ nh | Nguá»“n tÃ i liá»‡u                            |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - **Learning Content:** <br>&emsp; + Tìm hiểu IAM role là gì và cách ứng dụng truy cập AWS services an toàn (không hardcode access key). <br>&emsp; + Nắm vững các nguyên tắc cấp quyền tối thiểu. | 28/05/2026 | 28/05/2026 | <https://000048.awsstudygroup.com/> |
-| 3   | - **Practice:** <br>&emsp; + Tạo IAM role và gắn policy cần thiết. <br>&emsp; + Gắn role vào EC2 instance và kiểm tra quyền truy cập. <br>&emsp; + Thực hiện dọn dẹp role khỏi instance khi không còn sử dụng. | 29/05/2026   | 29/05/2026      | <https://000048.awsstudygroup.com/>       |
-| 4   | - **Learning Content:** <br>&emsp; + Tìm hiểu AWS Cloud9 là gì và cách thức hoạt động dựa trên EC2. <br>&emsp; + Khám phá cách làm việc trong IDE (file explorer, terminal, editor) ngay trên trình duyệt. | 30/05/2026   | 30/05/2026      | <https://000049.awsstudygroup.com/>       |
-| 5   | - **Practice:** <br>&emsp; + Tạo Cloud9 environment với cấu hình instance và nền tảng phù hợp. <br>&emsp; + Mở IDE, thử code, thao tác file và kết nối thử với tài nguyên AWS. | 31/05/2026   | 31/05/2026      | <https://000049.awsstudygroup.com/>       |
-| 6   | - **Learning & Practice:** <br>&emsp; + Tìm hiểu về quản lý chi phí cho Cloud9 (dừng instance khi không dùng). <br>&emsp; + Dừng môi trường sau khi hoàn thành lab và kiểm tra tài nguyên EC2 backend để tránh phát sinh chi phí. | 01/06/2026   | 01/06/2026      | <https://000049.awsstudygroup.com/>       |
+| 2   | - **Learning Content:** <br>&emsp; + TÃ¬m hiá»ƒu IAM role lÃ  gÃ¬ vÃ  cÃ¡ch á»©ng dá»¥ng truy cáº­p AWS services an toÃ n (khÃ´ng hardcode access key). <br>&emsp; + Náº¯m vá»¯ng cÃ¡c nguyÃªn táº¯c cáº¥p quyá»n tá»‘i thiá»ƒu. | 28/05/2026 | 28/05/2026 | <https://000048.awsstudygroup.com/> |
+| 3   | - **Practice:** <br>&emsp; + Táº¡o IAM role vÃ  gáº¯n policy cáº§n thiáº¿t. <br>&emsp; + Gáº¯n role vÃ o EC2 instance vÃ  kiá»ƒm tra quyá»n truy cáº­p. <br>&emsp; + Thá»±c hiá»‡n dá»n dáº¹p role khá»i instance khi khÃ´ng cÃ²n sá»­ dá»¥ng. | 29/05/2026   | 29/05/2026      | <https://000048.awsstudygroup.com/>       |
+| 4   | - **Learning Content:** <br>&emsp; + TÃ¬m hiá»ƒu AWS Cloud9 lÃ  gÃ¬ vÃ  cÃ¡ch thá»©c hoáº¡t Ä‘á»™ng dá»±a trÃªn EC2. <br>&emsp; + KhÃ¡m phÃ¡ cÃ¡ch lÃ m viá»‡c trong IDE (file explorer, terminal, editor) ngay trÃªn trÃ¬nh duyá»‡t. | 30/05/2026   | 30/05/2026      | <https://000049.awsstudygroup.com/>       |
+| 5   | - **Practice:** <br>&emsp; + Táº¡o Cloud9 environment vá»›i cáº¥u hÃ¬nh instance vÃ  ná»n táº£ng phÃ¹ há»£p. <br>&emsp; + Má»Ÿ IDE, thá»­ code, thao tÃ¡c file vÃ  káº¿t ná»‘i thá»­ vá»›i tÃ i nguyÃªn AWS. | 31/05/2026   | 31/05/2026      | <https://000049.awsstudygroup.com/>       |
+| 6   | - **Learning & Practice:** <br>&emsp; + TÃ¬m hiá»ƒu vá» quáº£n lÃ½ chi phÃ­ cho Cloud9 (dá»«ng instance khi khÃ´ng dÃ¹ng). <br>&emsp; + Dá»«ng mÃ´i trÆ°á»ng sau khi hoÃ n thÃ nh lab vÃ  kiá»ƒm tra tÃ i nguyÃªn EC2 backend Ä‘á»ƒ trÃ¡nh phÃ¡t sinh chi phÃ­. | 01/06/2026   | 01/06/2026      | <https://000049.awsstudygroup.com/>       |
 
-### Kết quả đạt được tuần 10:
+### Káº¿t quáº£ Ä‘áº¡t Ä‘Æ°á»£c tuáº§n 10:
 
-* Hiểu và vận dụng thành công IAM role để cấp quyền cho ứng dụng chạy trên EC2 truy cập an toàn các dịch vụ AWS.
-* Nắm vững cách quản lý, điều chỉnh và dọn dẹp các quyền không cần thiết tuân theo nguyên tắc quyền hạn tối thiểu.
-* Khởi tạo và thiết lập thành công môi trường lập trình đám mây AWS Cloud9.
-* Thực hiện thành công việc lập trình, chạy lệnh và kết nối tài nguyên ngay trên trình duyệt thông qua Cloud9 IDE.
-* Đảm bảo kiểm soát chi phí tốt thông qua việc dừng hoặc tắt các môi trường Cloud9/EC2 khi không có nhu cầu sử dụng.
+* Hiá»ƒu vÃ  váº­n dá»¥ng thÃ nh cÃ´ng IAM role Ä‘á»ƒ cáº¥p quyá»n cho á»©ng dá»¥ng cháº¡y trÃªn EC2 truy cáº­p an toÃ n cÃ¡c dá»‹ch vá»¥ AWS.
+* Náº¯m vá»¯ng cÃ¡ch quáº£n lÃ½, Ä‘iá»u chá»‰nh vÃ  dá»n dáº¹p cÃ¡c quyá»n khÃ´ng cáº§n thiáº¿t tuÃ¢n theo nguyÃªn táº¯c quyá»n háº¡n tá»‘i thiá»ƒu.
+* Khá»Ÿi táº¡o vÃ  thiáº¿t láº­p thÃ nh cÃ´ng mÃ´i trÆ°á»ng láº­p trÃ¬nh Ä‘Ã¡m mÃ¢y AWS Cloud9.
+* Thá»±c hiá»‡n thÃ nh cÃ´ng viá»‡c láº­p trÃ¬nh, cháº¡y lá»‡nh vÃ  káº¿t ná»‘i tÃ i nguyÃªn ngay trÃªn trÃ¬nh duyá»‡t thÃ´ng qua Cloud9 IDE.
+* Äáº£m báº£o kiá»ƒm soÃ¡t chi phÃ­ tá»‘t thÃ´ng qua viá»‡c dá»«ng hoáº·c táº¯t cÃ¡c mÃ´i trÆ°á»ng Cloud9/EC2 khi khÃ´ng cÃ³ nhu cáº§u sá»­ dá»¥ng.

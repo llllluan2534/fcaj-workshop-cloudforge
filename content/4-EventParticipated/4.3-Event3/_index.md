@@ -1,12 +1,12 @@
----
+﻿---
 title: "Event 3"
-date: 2024-01-01
+date: 2026-04-17
 weight: 1
 chapter: false
 pre: " <b> 4.3. </b> "
 ---
 
-# Summary Report: “FCAJ Community Day - Data Driven, AI Risen”
+# Summary Report: â€œFCAJ Community Day - Data Driven, AI Risenâ€
 
 
 ### Event Objectives
@@ -18,9 +18,9 @@ pre: " <b> 4.3. </b> "
 * Gain insights from live demonstrations of AI-powered enterprise use cases.
 ### Speakers
 
-- **Truong Tran** – AI Solution Sales Noventiq
+- **Truong Tran** â€“ AI Solution Sales Noventiq
 - **Anh Dang** - AI Solution Sales Noventiq
-- **Steve Tran** – CTO/Founder Cloud Thinker
+- **Steve Tran** â€“ CTO/Founder Cloud Thinker
 - **Trung Vu** - CEO Revve AI
 - **Bao Phan** - Cloud Engineer Cloud Kinetics
 - **Nguyen Nguyen** - Cloud Engineer Cloud Kinetics

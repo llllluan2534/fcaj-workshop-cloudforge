@@ -1,6 +1,6 @@
----
-title: "Sự kiện 1"
-date: 2024-01-01
+﻿---
+title: "Sá»± kiá»‡n 1"
+date: 2026-04-17
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
@@ -8,129 +8,129 @@ pre: " <b> 4.1. </b> "
 
 
 
-# Báo cáo Tổng kết: “Event CD AWS”
+# BÃ¡o cÃ¡o Tá»•ng káº¿t: â€œEvent CD AWSâ€
 
 
-### Mục tiêu Sự kiện
+### Má»¥c tiÃªu Sá»± kiá»‡n
 
-* Chia sẻ kiến thức thực tế, kỹ năng và kinh nghiệm từ các diễn giả trong ngành
-* Tạo cơ hội kết nối, thảo luận và trao đổi ý tưởng giữa những người tham gia
-* Cung cấp những góc nhìn giá trị để hỗ trợ học tập và phát triển nghề nghiệp
-* Truyền cảm hứng cho người tham dự thông qua những câu chuyện và bài học thực tế từ các dự án thực tế
-### Diễn giả
+* Chia sáº» kiáº¿n thá»©c thá»±c táº¿, ká»¹ nÄƒng vÃ  kinh nghiá»‡m tá»« cÃ¡c diá»…n giáº£ trong ngÃ nh
+* Táº¡o cÆ¡ há»™i káº¿t ná»‘i, tháº£o luáº­n vÃ  trao Ä‘á»•i Ã½ tÆ°á»Ÿng giá»¯a nhá»¯ng ngÆ°á»i tham gia
+* Cung cáº¥p nhá»¯ng gÃ³c nhÃ¬n giÃ¡ trá»‹ Ä‘á»ƒ há»— trá»£ há»c táº­p vÃ  phÃ¡t triá»ƒn nghá» nghiá»‡p
+* Truyá»n cáº£m há»©ng cho ngÆ°á»i tham dá»± thÃ´ng qua nhá»¯ng cÃ¢u chuyá»‡n vÃ  bÃ i há»c thá»±c táº¿ tá»« cÃ¡c dá»± Ã¡n thá»±c táº¿
+### Diá»…n giáº£
 
-- **Huỳnh Thái Linh** – FCAJ
-- **Huỳnh An Khương - Mai Quốc Anh - Nguyễn Trần Minh Quân** - FCAJ Challenger
-- **Nguyễn Thị Quỳnh Như** – FCAJ
-- **Trần Nghĩa** - FCAJ
-- **Trần Minh Quân** - FCAJ
-- **Phạm Khắc Uy** - FCAJ
+- **Huá»³nh ThÃ¡i Linh** â€“ FCAJ
+- **Huá»³nh An KhÆ°Æ¡ng - Mai Quá»‘c Anh - Nguyá»…n Tráº§n Minh QuÃ¢n** - FCAJ Challenger
+- **Nguyá»…n Thá»‹ Quá»³nh NhÆ°** â€“ FCAJ
+- **Tráº§n NghÄ©a** - FCAJ
+- **Tráº§n Minh QuÃ¢n** - FCAJ
+- **Pháº¡m Kháº¯c Uy** - FCAJ
 
-### Những Điểm Nổi Bật
+### Nhá»¯ng Äiá»ƒm Ná»•i Báº­t
 
-#### Chủ đề 1: Nâng cao Kỹ năng AWS của Bạn với Cloud Quest và FLoCI
+#### Chá»§ Ä‘á» 1: NÃ¢ng cao Ká»¹ nÄƒng AWS cá»§a Báº¡n vá»›i Cloud Quest vÃ  FLoCI
 
-##### 1. Những Thách thức khi Học thực hành AWS
+##### 1. Nhá»¯ng ThÃ¡ch thá»©c khi Há»c thá»±c hÃ nh AWS
 
-* Hiểu rõ những thách thức chung mà sinh viên gặp phải khi học AWS thông qua trải nghiệm thực tế.
-* Xác định rào cản giữa kiến thức lý thuyết và triển khai cloud trong thực tế.
-* Khám phá tầm quan trọng của việc học thực hành trong quá trình phát triển kỹ năng cloud.
+* Hiá»ƒu rÃµ nhá»¯ng thÃ¡ch thá»©c chung mÃ  sinh viÃªn gáº·p pháº£i khi há»c AWS thÃ´ng qua tráº£i nghiá»‡m thá»±c táº¿.
+* XÃ¡c Ä‘á»‹nh rÃ o cáº£n giá»¯a kiáº¿n thá»©c lÃ½ thuyáº¿t vÃ  triá»ƒn khai cloud trong thá»±c táº¿.
+* KhÃ¡m phÃ¡ táº§m quan trá»ng cá»§a viá»‡c há»c thá»±c hÃ nh trong quÃ¡ trÃ¬nh phÃ¡t triá»ƒn ká»¹ nÄƒng cloud.
 
 ##### 2. AWS Cloud Quest
 
-* Giới thiệu về AWS Cloud Quest như một nền tảng học tập thực hành và tương tác.
-* Học các khái niệm AWS thông qua các thử thách thực tế và tình huống thực tế.
-* Xây dựng kiến thức cloud thông qua việc học qua trải nghiệm thay vì chỉ học lý thuyết.
+* Giá»›i thiá»‡u vá» AWS Cloud Quest nhÆ° má»™t ná»n táº£ng há»c táº­p thá»±c hÃ nh vÃ  tÆ°Æ¡ng tÃ¡c.
+* Há»c cÃ¡c khÃ¡i niá»‡m AWS thÃ´ng qua cÃ¡c thá»­ thÃ¡ch thá»±c táº¿ vÃ  tÃ¬nh huá»‘ng thá»±c táº¿.
+* XÃ¢y dá»±ng kiáº¿n thá»©c cloud thÃ´ng qua viá»‡c há»c qua tráº£i nghiá»‡m thay vÃ¬ chá»‰ há»c lÃ½ thuyáº¿t.
 
-##### 3. Mã nguồn mở FLoCI
+##### 3. MÃ£ nguá»“n má»Ÿ FLoCI
 
-* Tổng quan về FLoCI như một sáng kiến mã nguồn mở cho việc học tập và cộng tác về cloud.
-* Cơ hội để sinh viên tham gia với cộng đồng cloud và các tài nguyên học tập.
-* Khuyến khích chia sẻ kiến thức và phát triển kỹ năng thực tế thông qua các đóng góp cho mã nguồn mở.
+* Tá»•ng quan vá» FLoCI nhÆ° má»™t sÃ¡ng kiáº¿n mÃ£ nguá»“n má»Ÿ cho viá»‡c há»c táº­p vÃ  cá»™ng tÃ¡c vá» cloud.
+* CÆ¡ há»™i Ä‘á»ƒ sinh viÃªn tham gia vá»›i cá»™ng Ä‘á»“ng cloud vÃ  cÃ¡c tÃ i nguyÃªn há»c táº­p.
+* Khuyáº¿n khÃ­ch chia sáº» kiáº¿n thá»©c vÃ  phÃ¡t triá»ƒn ká»¹ nÄƒng thá»±c táº¿ thÃ´ng qua cÃ¡c Ä‘Ã³ng gÃ³p cho mÃ£ nguá»“n má»Ÿ.
 
-##### 4. Kết hợp Cloud Quest và FLoCI Một cách Hiệu quả
+##### 4. Káº¿t há»£p Cloud Quest vÃ  FLoCI Má»™t cÃ¡ch Hiá»‡u quáº£
 
-* Tận dụng Cloud Quest để học thực hành AWS có cấu trúc.
-* Sử dụng FLoCI để mở rộng việc học thông qua sự tham gia và cộng tác với cộng đồng.
-* Tạo ra một lộ trình học tập cân bằng, kết hợp giữa thực hành có hướng dẫn và trải nghiệm thực tế.
-* Tối đa hóa sự phát triển kỹ năng cloud thông qua cả hai nền tảng.
+* Táº­n dá»¥ng Cloud Quest Ä‘á»ƒ há»c thá»±c hÃ nh AWS cÃ³ cáº¥u trÃºc.
+* Sá»­ dá»¥ng FLoCI Ä‘á»ƒ má»Ÿ rá»™ng viá»‡c há»c thÃ´ng qua sá»± tham gia vÃ  cá»™ng tÃ¡c vá»›i cá»™ng Ä‘á»“ng.
+* Táº¡o ra má»™t lá»™ trÃ¬nh há»c táº­p cÃ¢n báº±ng, káº¿t há»£p giá»¯a thá»±c hÃ nh cÃ³ hÆ°á»›ng dáº«n vÃ  tráº£i nghiá»‡m thá»±c táº¿.
+* Tá»‘i Ä‘a hÃ³a sá»± phÃ¡t triá»ƒn ká»¹ nÄƒng cloud thÃ´ng qua cáº£ hai ná»n táº£ng.
 
-#### Chủ đề 2: Hackathon – Rất Nhiều Niềm Vui, Sửa Lỗi và Trải Nghiệm Học Tập
+#### Chá»§ Ä‘á» 2: Hackathon â€“ Ráº¥t Nhiá»u Niá»m Vui, Sá»­a Lá»—i vÃ  Tráº£i Nghiá»‡m Há»c Táº­p
 
-* Hiểu về Hackathon
-* Học qua Thực hành
-* Xây dựng Dự án cho Portfolio
-* Tích lũy Kinh nghiệm Thực tế
-#### Chủ đề 3: Tại sao Nó là "Bắt buộc phải có" đối với Sự nghiệp, Cuộc sống Sinh viên, và Mọi thứ xung quanh.
+* Hiá»ƒu vá» Hackathon
+* Há»c qua Thá»±c hÃ nh
+* XÃ¢y dá»±ng Dá»± Ã¡n cho Portfolio
+* TÃ­ch lÅ©y Kinh nghiá»‡m Thá»±c táº¿
+#### Chá»§ Ä‘á» 3: Táº¡i sao NÃ³ lÃ  "Báº¯t buá»™c pháº£i cÃ³" Ä‘á»‘i vá»›i Sá»± nghiá»‡p, Cuá»™c sá»‘ng Sinh viÃªn, vÃ  Má»i thá»© xung quanh.
 
-##### 1. Hãy Nói về Sự Tự tin
+##### 1. HÃ£y NÃ³i vá» Sá»± Tá»± tin
 
-* Hiểu tự tin là gì
-* Tại sao tự tin lại quan trọng trong cuộc sống hàng ngày
+* Hiá»ƒu tá»± tin lÃ  gÃ¬
+* Táº¡i sao tá»± tin láº¡i quan trá»ng trong cuá»™c sá»‘ng hÃ ng ngÃ y
 
-##### 2. Cái giá của Sự Thiếu Tự tin trong Cuộc sống Sinh viên
+##### 2. CÃ¡i giÃ¡ cá»§a Sá»± Thiáº¿u Tá»± tin trong Cuá»™c sá»‘ng Sinh viÃªn
 
-* Tác động của sự thiếu tự tin đối với việc học và các cơ hội
-* Những thách thức phổ biến mà sinh viên phải đối mặt
+* TÃ¡c Ä‘á»™ng cá»§a sá»± thiáº¿u tá»± tin Ä‘á»‘i vá»›i viá»‡c há»c vÃ  cÃ¡c cÆ¡ há»™i
+* Nhá»¯ng thÃ¡ch thá»©c phá»• biáº¿n mÃ  sinh viÃªn pháº£i Ä‘á»‘i máº·t
 
-##### 3. Khoa học đằng sau Sự Khó khăn
+##### 3. Khoa há»c Ä‘áº±ng sau Sá»± KhÃ³ khÄƒn
 
-* Các yếu tố tâm lý ảnh hưởng đến sự tự tin
-* Hiểu rõ nguồn gốc của sự thiếu tự tin
+* CÃ¡c yáº¿u tá»‘ tÃ¢m lÃ½ áº£nh hÆ°á»Ÿng Ä‘áº¿n sá»± tá»± tin
+* Hiá»ƒu rÃµ nguá»“n gá»‘c cá»§a sá»± thiáº¿u tá»± tin
 
-##### 4. Sức mạnh của Sự Tự tin – Tại sao Nó Lại Cần thiết
+##### 4. Sá»©c máº¡nh cá»§a Sá»± Tá»± tin â€“ Táº¡i sao NÃ³ Láº¡i Cáº§n thiáº¿t
 
-* Lợi ích của sự tự tin trong học thuật và sự nghiệp
-* Xây dựng khả năng phục hồi và phát triển bản thân
+* Lá»£i Ã­ch cá»§a sá»± tá»± tin trong há»c thuáº­t vÃ  sá»± nghiá»‡p
+* XÃ¢y dá»±ng kháº£ nÄƒng phá»¥c há»“i vÃ  phÃ¡t triá»ƒn báº£n thÃ¢n
 
-##### 5. Cách "Hack" Sự Tự tin Hàng ngày
+##### 5. CÃ¡ch "Hack" Sá»± Tá»± tin HÃ ng ngÃ y
 
-* Các chiến lược thực tế để xây dựng sự tự tin
-* Những thói quen nhỏ tạo ra sự cải thiện lâu dài
+* CÃ¡c chiáº¿n lÆ°á»£c thá»±c táº¿ Ä‘á»ƒ xÃ¢y dá»±ng sá»± tá»± tin
+* Nhá»¯ng thÃ³i quen nhá» táº¡o ra sá»± cáº£i thiá»‡n lÃ¢u dÃ i
 
-##### 6. Tổng kết
+##### 6. Tá»•ng káº¿t
 
-* Những bài học chính và điều đọng lại
-#### Chủ đề 4: Tử Vi Đại Việt
+* Nhá»¯ng bÃ i há»c chÃ­nh vÃ  Ä‘iá»u Ä‘á»ng láº¡i
+#### Chá»§ Ä‘á» 4: Tá»­ Vi Äáº¡i Viá»‡t
 
-##### 1. Giới thiệu Sản phẩm
+##### 1. Giá»›i thiá»‡u Sáº£n pháº©m
 
-* Giải mã vận mệnh
-* Thấu hiểu bản ngã bên trong bạn
+* Giáº£i mÃ£ váº­n má»‡nh
+* Tháº¥u hiá»ƒu báº£n ngÃ£ bÃªn trong báº¡n
 
-##### 2. Khám phá những Hiểu biết về Chiêm tinh học
+##### 2. KhÃ¡m phÃ¡ nhá»¯ng Hiá»ƒu biáº¿t vá» ChiÃªm tinh há»c
 
-* Khám phá những bí mật của vũ trụ
-* Tìm hiểu cách năng lượng từ các chòm sao ảnh hưởng đến cuộc sống
+* KhÃ¡m phÃ¡ nhá»¯ng bÃ­ máº­t cá»§a vÅ© trá»¥
+* TÃ¬m hiá»ƒu cÃ¡ch nÄƒng lÆ°á»£ng tá»« cÃ¡c chÃ²m sao áº£nh hÆ°á»Ÿng Ä‘áº¿n cuá»™c sá»‘ng
 
-##### 3. Trải nghiệm Được hỗ trợ bởi AI
+##### 3. Tráº£i nghiá»‡m ÄÆ°á»£c há»— trá»£ bá»Ÿi AI
 
-* Được tạo bởi AI
-* Xem cùng lời khuyên gợi ý
-#### Chủ đề 5: Tảng Băng Chìm của Một Dự Án – DevOps Trước Thảm Họa
+* ÄÆ°á»£c táº¡o bá»Ÿi AI
+* Xem cÃ¹ng lá»i khuyÃªn gá»£i Ã½
+#### Chá»§ Ä‘á» 5: Táº£ng BÄƒng ChÃ¬m cá»§a Má»™t Dá»± Ãn â€“ DevOps TrÆ°á»›c Tháº£m Há»a
 
-* Những thách thức tiềm ẩn trong các dự án phần mềm
-* Vai trò của DevOps trong việc ngăn ngừa thất bại
-* Xác định rủi ro trước khi chúng trở thành thảm họa
-* Xây dựng các quy trình phát triển đáng tin cậy hơn
-#### Chủ đề 6: Tảng Băng Chìm của Sự Trì hoãn
+* Nhá»¯ng thÃ¡ch thá»©c tiá»m áº©n trong cÃ¡c dá»± Ã¡n pháº§n má»m
+* Vai trÃ² cá»§a DevOps trong viá»‡c ngÄƒn ngá»«a tháº¥t báº¡i
+* XÃ¡c Ä‘á»‹nh rá»§i ro trÆ°á»›c khi chÃºng trá»Ÿ thÃ nh tháº£m há»a
+* XÃ¢y dá»±ng cÃ¡c quy trÃ¬nh phÃ¡t triá»ƒn Ä‘Ã¡ng tin cáº­y hÆ¡n
+#### Chá»§ Ä‘á» 6: Táº£ng BÄƒng ChÃ¬m cá»§a Sá»± TrÃ¬ hoÃ£n
 
-* Hiểu về sự trì hoãn và các nguyên nhân tiềm ẩn
-* Tác động của sự trì hoãn đối với kết quả học tập và làm việc
-* Nhận diện các hành vi trì hoãn phổ biến
-* Chiến lược vượt qua sự trì hoãn và cải thiện năng suất
+* Hiá»ƒu vá» sá»± trÃ¬ hoÃ£n vÃ  cÃ¡c nguyÃªn nhÃ¢n tiá»m áº©n
+* TÃ¡c Ä‘á»™ng cá»§a sá»± trÃ¬ hoÃ£n Ä‘á»‘i vá»›i káº¿t quáº£ há»c táº­p vÃ  lÃ m viá»‡c
+* Nháº­n diá»‡n cÃ¡c hÃ nh vi trÃ¬ hoÃ£n phá»• biáº¿n
+* Chiáº¿n lÆ°á»£c vÆ°á»£t qua sá»± trÃ¬ hoÃ£n vÃ  cáº£i thiá»‡n nÄƒng suáº¥t
 
-### Bài học rút ra (Lessons Learned)
+### BÃ i há»c rÃºt ra (Lessons Learned)
 
-Tham gia sự kiện này mang lại cho tôi nhiều góc nhìn mới mẻ và những kinh nghiệm thực tế quý giá:
-- **Kỹ năng thực hành với Cloud**: Hiểu rõ hơn tầm quan trọng của việc học qua thực hành (hands-on) thông qua các nền tảng như AWS Cloud Quest thay vì chỉ học lý thuyết.
-- **Tư duy giải quyết vấn đề**: Các cuộc thi Hackathon là cơ hội tuyệt vời để rèn luyện kỹ năng xây dựng sản phẩm thực tế, làm việc nhóm và xử lý lỗi.
-- **Tầm quan trọng của DevOps**: Nhận thức được "tảng băng chìm" trong các dự án phần mềm và vai trò then chốt của DevOps trong việc phát hiện và ngăn chặn rủi ro từ sớm.
-- **Phát triển bản thân**: Sự tự tin và khả năng vượt qua sự trì hoãn là những yếu tố quan trọng giúp tối ưu hóa hiệu suất làm việc và học tập.
-- **Ứng dụng AI**: Hiểu được cách ứng dụng AI để tạo ra các trải nghiệm mới lạ và cá nhân hóa cho người dùng.
+Tham gia sá»± kiá»‡n nÃ y mang láº¡i cho tÃ´i nhiá»u gÃ³c nhÃ¬n má»›i máº» vÃ  nhá»¯ng kinh nghiá»‡m thá»±c táº¿ quÃ½ giÃ¡:
+- **Ká»¹ nÄƒng thá»±c hÃ nh vá»›i Cloud**: Hiá»ƒu rÃµ hÆ¡n táº§m quan trá»ng cá»§a viá»‡c há»c qua thá»±c hÃ nh (hands-on) thÃ´ng qua cÃ¡c ná»n táº£ng nhÆ° AWS Cloud Quest thay vÃ¬ chá»‰ há»c lÃ½ thuyáº¿t.
+- **TÆ° duy giáº£i quyáº¿t váº¥n Ä‘á»**: CÃ¡c cuá»™c thi Hackathon lÃ  cÆ¡ há»™i tuyá»‡t vá»i Ä‘á»ƒ rÃ¨n luyá»‡n ká»¹ nÄƒng xÃ¢y dá»±ng sáº£n pháº©m thá»±c táº¿, lÃ m viá»‡c nhÃ³m vÃ  xá»­ lÃ½ lá»—i.
+- **Táº§m quan trá»ng cá»§a DevOps**: Nháº­n thá»©c Ä‘Æ°á»£c "táº£ng bÄƒng chÃ¬m" trong cÃ¡c dá»± Ã¡n pháº§n má»m vÃ  vai trÃ² then chá»‘t cá»§a DevOps trong viá»‡c phÃ¡t hiá»‡n vÃ  ngÄƒn cháº·n rá»§i ro tá»« sá»›m.
+- **PhÃ¡t triá»ƒn báº£n thÃ¢n**: Sá»± tá»± tin vÃ  kháº£ nÄƒng vÆ°á»£t qua sá»± trÃ¬ hoÃ£n lÃ  nhá»¯ng yáº¿u tá»‘ quan trá»ng giÃºp tá»‘i Æ°u hÃ³a hiá»‡u suáº¥t lÃ m viá»‡c vÃ  há»c táº­p.
+- **á»¨ng dá»¥ng AI**: Hiá»ƒu Ä‘Æ°á»£c cÃ¡ch á»©ng dá»¥ng AI Ä‘á»ƒ táº¡o ra cÃ¡c tráº£i nghiá»‡m má»›i láº¡ vÃ  cÃ¡ nhÃ¢n hÃ³a cho ngÆ°á»i dÃ¹ng.
 
-#### Một số hình ảnh sự kiện
-![Ảnh sự kiện 1](/images/even1.1.JPG)
-![Ảnh sự kiện 2](/images/even1.2.JPG)  
+#### Má»™t sá»‘ hÃ¬nh áº£nh sá»± kiá»‡n
+![áº¢nh sá»± kiá»‡n 1](/images/even1.1.JPG)
+![áº¢nh sá»± kiá»‡n 2](/images/even1.2.JPG)  
 
-> Nhìn chung, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi định hình lại tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và cộng tác đa nhóm.
+> NhÃ¬n chung, sá»± kiá»‡n khÃ´ng chá»‰ cung cáº¥p kiáº¿n thá»©c ká»¹ thuáº­t mÃ  cÃ²n giÃºp tÃ´i Ä‘á»‹nh hÃ¬nh láº¡i tÆ° duy vá» thiáº¿t káº¿ á»©ng dá»¥ng, hiá»‡n Ä‘áº¡i hÃ³a há»‡ thá»‘ng vÃ  cá»™ng tÃ¡c Ä‘a nhÃ³m.

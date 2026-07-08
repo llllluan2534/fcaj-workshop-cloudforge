@@ -1,18 +1,18 @@
----
+﻿---
 title: "Week 9 Worklog"
-date: 2024-01-01
+date: 2026-04-17
 weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
 {{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
+âš ï¸ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
 {{% /notice %}}
 
 
 ### Week 9 Objectives:
 
-* Get acquainted with Amazon Lightsail – AWS's powerful and simple VPS solution for websites and applications.
+* Get acquainted with Amazon Lightsail â€“ AWS's powerful and simple VPS solution for websites and applications.
 * Practice deploying three common applications: WordPress (blog), PrestaShop (e-commerce), and Akaunting (finance).
 * Configure application security (admin permissions, HTTPS, firewall) to protect against default vulnerabilities.
 * Master the methods for backing up and monitoring system resource health.
