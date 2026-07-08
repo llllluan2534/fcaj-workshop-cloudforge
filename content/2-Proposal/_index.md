@@ -1,4 +1,4 @@
----
+﻿---
 title: "Proposal"
 date: 2026-04-17
 weight: 2
@@ -11,61 +11,61 @@ pre: " <b> 2. </b> "
 
 ### 1. Executive Summary
 Smart Media Analytics (SMA) is a local-first media management and search system designed for video editors, designers, and research teams needing rapid retrieval of media content. The system automates media ingestion, scene splitting, transcription, and AI-powered contextual description, enabling natural language search.
-Initially, SMA runs entirely on local machines (via Docker) to ensure privacy and cut experimental costs. For production scaling, it offers a seamless upgrade path to AWS (S3, Bedrock, OpenSearch, RDS).
+Initially, SMA runs entirely on local machines (via Docker) to ensure privacy and cut experimental costs. For production scaling, it offers a seamless upgrade path to AWS (S3, Bedrock, RDS).
 
 ### 2. Problem Statement
-**Current Problem:** Managing media is tedious due to scattered data and manual searching for specific scenes or dialogues. Relying directly on cloud AI services for the entire pipeline incurs high costs and potential data privacy risks.
-**Solution:** SMA addresses this with an automated pipeline utilizing a React dashboard, FastAPI, ChromaDB, PostgreSQL, MinIO, and local AI models (Ollama, faster-whisper). Users simply type "beach sunset" to jump exactly to the desired video timestamp. This significantly reduces manual effort and optimizes infrastructure costs.
+**What’s the Problem?**
+Current media libraries are scattered, and meaningless file names make manual scene searching incredibly time-consuming. Relying directly on cloud AI services for the entire pipeline from day one incurs high costs and potential data privacy risks.
+
+**The Solution**
+SMA addresses this with an automated pipeline utilizing a React dashboard, FastAPI, ChromaDB, PostgreSQL, MinIO, and local AI models (Ollama, faster-whisper). Users simply type "beach sunset" to jump exactly to the desired video timestamp. When scaling to production, it seamlessly transitions to AWS services like Amazon S3, AWS Bedrock, Amazon Transcribe, and Amazon RDS PostgreSQL, managed and deployed via AWS Amplify and orchestrated by Step Functions and ECS Fargate.
+
+**Benefits and Return on Investment**
+The solution significantly shortens the time required to search for footage, read transcripts, and identify needed scenes, boosting the creative team's efficiency. Users can query in natural language and get precise timestamps instead of manually reviewing files. The initial local-first approach saves cloud AI costs during development, while the clear AWS migration path ensures long-term scalability.
 
 ### 3. Solution Architecture
-SMA is designed with a hybrid local-to-cloud approach to be convenient for internal development while remaining easy to upgrade to a production environment later. In the local phase, the entire media ingest workflow runs in Docker Compose: the system receives videos and images, automatically detects scenes, transcribes audio, generates AI content descriptions, and saves processed data locally.
-
-When deploying to AWS, the architecture can scale without major changes to the processing logic. S3 is used for media storage, Bedrock and Transcribe handle the AI components, RDS PostgreSQL stores metadata, AWS Amplify manages and delivers the frontend interface, while services like Cognito, ECR, ECS Fargate, App Runner, Step Functions, SQS, EventBridge, CloudWatch, X-Ray, ElastiCache, and VPC support security, orchestration, monitoring, and system scaling.
+The platform employs a hybrid local-to-cloud approach. In the local phase, the media ingest workflow runs in Docker Compose. When deployed to AWS, the architecture uses a serverless and managed services model. 
 
 ![SMA Architecture](/images/2-Proposal/1.SMA_architecture.png)
 ![SMA Architecture](/images/2-Proposal/2.SMA_architecture.png)
 
-**AWS Services Integrated in the Architecture:**
-- **Networking & Delivery:**
-  - **Amazon Route 53**: DNS management.
-  - **AWS Amplify**: Hosting and CDN for rapid delivery of the React frontend.
-  - **Amazon VPC**: Secure virtual network, utilizing a **NAT Gateway** and Internet Gateway for private subnet outbound access.
-- **Security & Identity:**
-  - **Amazon Cognito**: User authentication and authorization (JWT tokens).
-  - **AWS Secrets Manager**: Secure storage for DB credentials and API keys.
-- **Storage & Databases:**
-  - **Amazon S3**: Object storage for original media and keyframes (with **S3 Gateway Endpoint**).
-  - **Amazon RDS (PostgreSQL)**: Primary relational database for metadata (Multi-AZ).
-  - **Amazon ElastiCache (Redis)**: High-speed in-memory cache for queries.
-- **Compute & API:**
-  - **AWS App Runner**: Simplified, auto-scaling deployment for the FastAPI backend.
-  - **Amazon API Gateway**: Routing for REST APIs and WebSocket (WSS Push).
-  - **Amazon ECS (AWS Fargate)**: Serverless compute for video processing Auto Scaling tasks.
-- **Artificial Intelligence (AI/ML):**
-  - **Amazon Bedrock**: Utilizes models like Nova Lite & Titan Embeddings for semantic analysis and vector generation.
-  - **Amazon Transcribe**: Automated Speech-to-Text for audio extraction.
-- **Integration & Orchestration:**
-  - **Amazon SQS & Amazon EventBridge**: Message queues and event bus for decoupled communication.
-  - **AWS Step Functions**: Workflow orchestration for the complex video processing pipeline.
-- **DevOps & Monitoring:**
-  - **Amazon ECR**: Secure registry for Docker images.
-  - **Amazon CloudWatch & AWS X-Ray**: Comprehensive logging, metric alarms, and Distributed Tracing.
+**AWS Services Used**
+- **Networking & Delivery:** Amazon Route 53 (DNS), AWS Amplify (Frontend Hosting & CDN), Amazon VPC (Network with NAT Gateway).
+- **Security & Identity:** Amazon Cognito (User Auth), AWS Secrets Manager (Credentials).
+- **Storage & Databases:** Amazon S3 (Media Storage), Amazon RDS PostgreSQL (Metadata), Amazon ElastiCache (Caching).
+- **Compute & API:** AWS App Runner (Backend API), Amazon API Gateway (Routing), Amazon ECS Fargate (Video Processing Tasks).
+- **Artificial Intelligence (AI/ML):** Amazon Bedrock (Semantic analysis & Embeddings), Amazon Transcribe (Speech-to-Text).
+- **Integration & Orchestration:** Amazon SQS & EventBridge (Queues & Events), AWS Step Functions (Workflow orchestration).
+- **DevOps & Monitoring:** Amazon ECR (Container Registry), Amazon CloudWatch & AWS X-Ray (Logging & Tracing).
 
-**Core Component Design**
-- **Frontend Layer**: React app managed and distributed by AWS Amplify with Route 53, authenticated via Cognito.
-- **API & Routing Layer**: API Gateway routes traffic to the FastAPI service hosted on App Runner.
-- **Processing & AI Layer**: Step Functions coordinates EventBridge and SQS to trigger ECS (Fargate) tasks for scene detection, followed by Bedrock & Transcribe for AI extraction.
-- **Data Layer**: Metadata is persisted in RDS PostgreSQL, cached in ElastiCache. Vectors and media object persistence are handled directly from the processing tasks. The entire data layer is secured within a VPC with a NAT Gateway.
+**Component Design**
+- **Frontend Layer:** React app managed and distributed by AWS Amplify with Route 53, authenticated via Cognito.
+- **API & Routing Layer:** API Gateway routes traffic to the FastAPI service hosted on App Runner.
+- **Processing & AI Layer:** Step Functions coordinates EventBridge and SQS to trigger ECS (Fargate) tasks for scene detection, followed by Bedrock & Transcribe for AI extraction.
+- **Data Layer:** Metadata is persisted in RDS PostgreSQL, cached in ElastiCache. Vectors and media object persistence are handled directly from the processing tasks. Secured within a VPC with a NAT Gateway.
 
-### 4. Implementation Phases
-The project is divided into 4 main phases:
-1. **Architectural Research**: Map the data flow to the extensive AWS services list.
-2. **Local-first Build**: Develop and refine the core logic locally using Docker.
-3. **AWS Cloud-ready Integration**: Incrementally replace local containers with AWS managed services (e.g., App Runner, Bedrock, S3).
-4. **CI/CD & Monitoring**: Push images to ECR via GitHub Actions, set up CloudWatch alarms, and enable X-Ray tracing.
+### 4. Technical Implementation
+**Implementation Phases**
+1. **Architectural Research:** Design the local architecture and map the data flow to the AWS services list (1 month pre-internship).
+2. **Local-first Build:** Develop and refine the core logic locally using Docker Compose, integrating Ollama and faster-whisper (Month 1).
+3. **AWS Cloud-ready Integration:** Incrementally replace local containers with AWS managed services like App Runner, Bedrock, and S3 (Month 2).
+4. **Develop, Test, and Deploy:** Finalize the cloud infrastructure using CI/CD, set up CloudWatch monitoring, and release to production (Month 3).
 
-### 5. Budget Estimation (AWS Environment)
-Deploying this comprehensive production architecture with over 20 AWS services (including Multi-AZ and a 24/7 NAT Gateway), the budget for a small-scale or lab environment is estimated as follows:
+**Technical Requirements**
+- **Media Processing:** Containerized processing tasks utilizing FFMPEG for scene splitting.
+- **Cloud Infrastructure:** Practical knowledge of AWS Amplify, ECS Fargate, Step Functions, Bedrock, and RDS. Use AWS SDK to code interactions (e.g., S3 uploads, Bedrock invocations).
+
+### 5. Timeline & Milestones
+**Project Timeline**
+- **Pre-Internship (Month 0):** 1 month for planning and architectural research.
+- **Internship (Months 1-3):** 3 months.
+  - **Month 1:** Build the local-first pipeline and test local AI models.
+  - **Month 2:** Design and adapt the architecture for AWS, setting up core services (S3, RDS, ECS).
+  - **Month 3:** Implement Step Functions orchestration, test full flow, and launch.
+- **Post-Launch:** Up to 1 year for further model tuning and scaling.
+
+### 6. Budget Estimation
+Deploying this comprehensive production architecture with over 20 AWS services, the budget for a small-scale or lab environment is estimated as follows:
 
 | AWS Service | Use Case | Estimated Cost/Month (USD) |
 | --- | --- | --- |
@@ -85,7 +85,26 @@ Deploying this comprehensive production architecture with over 20 AWS services (
 | **Amazon Cognito** | User Authentication (JWT) | $0.00 (Free Tier) |
 | **Estimated Total** | **Entire System** | **~$181.90** |
 
-### 6. Risk Assessment & Expected Outcomes
-- **Risk Matrix:** Cloud scaling costs could increase, and local AI inference may be slow.
-- **Mitigation Strategies:** Limit batch ingests, cache results aggressively, and only migrate necessary components to cloud services (like Bedrock/OpenSearch) when required.
-- **Expected Outcomes:** A highly efficient Media Intelligence system that empowers creative teams to search media via natural language, complete with a flexible infrastructure roadmap.
+### 7. Risk Assessment
+**Risk Matrix**
+- **Large Media Volumes:** High impact, medium probability.
+- **Local AI Inference Speed:** Medium impact, high probability.
+- **Cloud Scaling Costs:** High impact, low to medium probability.
+
+**Mitigation Strategies**
+- **Media Volumes:** Limit batch ingests, optimize FFMPEG processing.
+- **AI Inference:** Cache results aggressively, move to AWS Bedrock if local models are too slow.
+- **Costs:** Use AWS budget alerts and monitor resource utilization closely.
+
+**Contingency Plans**
+- If local vector search is a bottleneck, migrate to OpenSearch Serverless earlier than planned.
+- Retain basic metadata even if full media processing fails, avoiding total library loss.
+
+### 8. Expected Outcomes
+**Technical Improvements:**
+- SMA enables users to ingest media, automatically generate semantic indices, search via natural language, and jump directly to the exact video timestamp.
+- Replaces manual tagging and searching with an automated AI pipeline.
+
+**Long-term Value:**
+- Serves as a highly efficient Media Intelligence system for creative teams.
+- The local-first architecture ensures quick development, while AWS mapping provides a clear upgrade path to production infrastructure.
