@@ -1,242 +1,169 @@
 ---
-title : "Các bước chuẩn bị"
-date : 2024-01-01 
-weight : 2
+title : "Điều kiện tiên quyết & IAM"
+date : 2026-07-09
+weight : 2 
 chapter : false
 pre : " <b> 5.2. </b> "
 ---
 
-#### IAM permissions
-Gắn IAM permission policy sau vào tài khoản aws user của bạn để triển khai và dọn dẹp tài nguyên trong workshop này.
-```
+Để tuân thủ nguyên tắc **Đặc quyền tối thiểu (Least Privilege)** và đảm bảo giao tiếp an toàn giữa các Microservices, chúng ta sẽ thiết lập các Group IAM cụ thể và các Role dựa trên JSON chính xác cho các container ECS Fargate và trình điều phối Step Functions.
+
+#### 0. Tạo IAM Groups & Users (Môi trường Workshop)
+
+Trước khi tạo các role cho service, hãy thiết lập các nhóm (group) IAM để quản lý quyền truy cập console cho nhóm của bạn.
+
+1. Điều hướng đến **IAM > User groups > Create group**.
+2. Tạo một nhóm admin:
+   - **User group name:** `CloudForge-Admins`
+   - **Permissions policy:** `AdministratorAccess`
+   
+   ![Create Admin Group](/images/5-Workshop/5.2-Prerequisite/iam_group_admin.png)
+
+3. Tạo một nhóm developer (dành cho các thành viên trong nhóm triển khai mà không cần toàn quyền truy cập tài khoản):
+   - **User group name:** `CloudForge-Developers`
+   - **Permissions policy:** `PowerUserAccess`
+   
+   ![Create Dev Group](/images/5-Workshop/5.2-Prerequisite/iam_group_dev.png)
+
+4. Chuyển đến **IAM > Users > Create user**, tạo user cho các thành viên trong nhóm của bạn (ví dụ: `cf-vy`, `cf-luan`), và gán họ vào các nhóm phù hợp.
+
+   ![Assign Users](/images/5-Workshop/5.2-Prerequisite/iam_assign_users.png)
+
+#### 1. Tạo IAM Roles cho Compute & Workflow
+
+Trong AWS ECS Fargate, một container yêu cầu hai loại role: một **Execution Role** (để Fargate agent tải image và đẩy log) và một **Task Role** (để mã nguồn (code) thực tế của bạn có thể truy cập các dịch vụ AWS khác).
+
+**Role 1: ECS Task Execution Role (Cấp hệ thống)**
+1. Chuyển đến **IAM > Roles > Create role**. Chọn **AWS service > Elastic Container Service > Elastic Container Service Task**.
+2. Đính kèm policy được quản lý: `AmazonECSTaskExecutionRolePolicy`.
+3. Đặt tên: `ecsTaskExecutionRole` và nhấn Create.
+
+   ![ECS Execution Role](/images/5-Workshop/5.2-Prerequisite/iam_ecs_execution_role.png)
+
+**Role 2: ECS-Backend-TaskRole (API & Vector Search)**
+Role này cho phép backend FastAPI/Node.js của bạn chuyển đổi văn bản thành vector qua Bedrock và đọc/ghi vào S3.
+1. Chuyển đến **IAM > Policies > Create policy (tab JSON)**.
+2. Dán đoạn JSON sau:
+```json
 {
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "VisualEditor0",
+            "Sid": "AllowS3Access",
             "Effect": "Allow",
             "Action": [
-                "cloudformation:*",
-                "cloudwatch:*",
-                "ec2:AcceptTransitGatewayPeeringAttachment",
-                "ec2:AcceptTransitGatewayVpcAttachment",
-                "ec2:AllocateAddress",
-                "ec2:AssociateAddress",
-                "ec2:AssociateIamInstanceProfile",
-                "ec2:AssociateRouteTable",
-                "ec2:AssociateSubnetCidrBlock",
-                "ec2:AssociateTransitGatewayRouteTable",
-                "ec2:AssociateVpcCidrBlock",
-                "ec2:AttachInternetGateway",
-                "ec2:AttachNetworkInterface",
-                "ec2:AttachVolume",
-                "ec2:AttachVpnGateway",
-                "ec2:AuthorizeSecurityGroupEgress",
-                "ec2:AuthorizeSecurityGroupIngress",
-                "ec2:CreateClientVpnEndpoint",
-                "ec2:CreateClientVpnRoute",
-                "ec2:CreateCustomerGateway",
-                "ec2:CreateDhcpOptions",
-                "ec2:CreateFlowLogs",
-                "ec2:CreateInternetGateway",
-                "ec2:CreateLaunchTemplate",
-                "ec2:CreateNetworkAcl",
-                "ec2:CreateNetworkInterface",
-                "ec2:CreateNetworkInterfacePermission",
-                "ec2:CreateRoute",
-                "ec2:CreateRouteTable",
-                "ec2:CreateSecurityGroup",
-                "ec2:CreateSubnet",
-                "ec2:CreateSubnetCidrReservation",
-                "ec2:CreateTags",
-                "ec2:CreateTransitGateway",
-                "ec2:CreateTransitGatewayPeeringAttachment",
-                "ec2:CreateTransitGatewayPrefixListReference",
-                "ec2:CreateTransitGatewayRoute",
-                "ec2:CreateTransitGatewayRouteTable",
-                "ec2:CreateTransitGatewayVpcAttachment",
-                "ec2:CreateVpc",
-                "ec2:CreateVpcEndpoint",
-                "ec2:CreateVpcEndpointConnectionNotification",
-                "ec2:CreateVpcEndpointServiceConfiguration",
-                "ec2:CreateVpnConnection",
-                "ec2:CreateVpnConnectionRoute",
-                "ec2:CreateVpnGateway",
-                "ec2:DeleteCustomerGateway",
-                "ec2:DeleteFlowLogs",
-                "ec2:DeleteInternetGateway",
-                "ec2:DeleteNetworkInterface",
-                "ec2:DeleteNetworkInterfacePermission",
-                "ec2:DeleteRoute",
-                "ec2:DeleteRouteTable",
-                "ec2:DeleteSecurityGroup",
-                "ec2:DeleteSubnet",
-                "ec2:DeleteSubnetCidrReservation",
-                "ec2:DeleteTags",
-                "ec2:DeleteTransitGateway",
-                "ec2:DeleteTransitGatewayPeeringAttachment",
-                "ec2:DeleteTransitGatewayPrefixListReference",
-                "ec2:DeleteTransitGatewayRoute",
-                "ec2:DeleteTransitGatewayRouteTable",
-                "ec2:DeleteTransitGatewayVpcAttachment",
-                "ec2:DeleteVpc",
-                "ec2:DeleteVpcEndpoints",
-                "ec2:DeleteVpcEndpointServiceConfigurations",
-                "ec2:DeleteVpnConnection",
-                "ec2:DeleteVpnConnectionRoute",
-                "ec2:Describe*",
-                "ec2:DetachInternetGateway",
-                "ec2:DisassociateAddress",
-                "ec2:DisassociateRouteTable",
-                "ec2:GetLaunchTemplateData",
-                "ec2:GetTransitGatewayAttachmentPropagations",
-                "ec2:ModifyInstanceAttribute",
-                "ec2:ModifySecurityGroupRules",
-                "ec2:ModifyTransitGatewayVpcAttachment",
-                "ec2:ModifyVpcAttribute",
-                "ec2:ModifyVpcEndpoint",
-                "ec2:ReleaseAddress",
-                "ec2:ReplaceRoute",
-                "ec2:RevokeSecurityGroupEgress",
-                "ec2:RevokeSecurityGroupIngress",
-                "ec2:RunInstances",
-                "ec2:StartInstances",
-                "ec2:StopInstances",
-                "ec2:UpdateSecurityGroupRuleDescriptionsEgress",
-                "ec2:UpdateSecurityGroupRuleDescriptionsIngress",
-                "iam:AddRoleToInstanceProfile",
-                "iam:AttachRolePolicy",
-                "iam:CreateInstanceProfile",
-                "iam:CreatePolicy",
-                "iam:CreateRole",
-                "iam:DeleteInstanceProfile",
-                "iam:DeletePolicy",
-                "iam:DeleteRole",
-                "iam:DeleteRolePolicy",
-                "iam:DetachRolePolicy",
-                "iam:GetInstanceProfile",
-                "iam:GetPolicy",
-                "iam:GetRole",
-                "iam:GetRolePolicy",
-                "iam:ListPolicyVersions",
-                "iam:ListRoles",
-                "iam:PassRole",
-                "iam:PutRolePolicy",
-                "iam:RemoveRoleFromInstanceProfile",
-                "lambda:CreateFunction",
-                "lambda:DeleteFunction",
-                "lambda:DeleteLayerVersion",
-                "lambda:GetFunction",
-                "lambda:GetLayerVersion",
-                "lambda:InvokeFunction",
-                "lambda:PublishLayerVersion",
-                "logs:CreateLogGroup",
-                "logs:DeleteLogGroup",
-                "logs:DescribeLogGroups",
-                "logs:PutRetentionPolicy",
-                "route53:ChangeTagsForResource",
-                "route53:CreateHealthCheck",
-                "route53:CreateHostedZone",
-                "route53:CreateTrafficPolicy",
-                "route53:DeleteHostedZone",
-                "route53:DisassociateVPCFromHostedZone",
-                "route53:GetHostedZone",
-                "route53:ListHostedZones",
-                "route53domains:ListDomains",
-                "route53domains:ListOperations",
-                "route53domains:ListTagsForDomain",
-                "route53resolver:AssociateResolverEndpointIpAddress",
-                "route53resolver:AssociateResolverRule",
-                "route53resolver:CreateResolverEndpoint",
-                "route53resolver:CreateResolverRule",
-                "route53resolver:DeleteResolverEndpoint",
-                "route53resolver:DeleteResolverRule",
-                "route53resolver:DisassociateResolverEndpointIpAddress",
-                "route53resolver:DisassociateResolverRule",
-                "route53resolver:GetResolverEndpoint",
-                "route53resolver:GetResolverRule",
-                "route53resolver:ListResolverEndpointIpAddresses",
-                "route53resolver:ListResolverEndpoints",
-                "route53resolver:ListResolverRuleAssociations",
-                "route53resolver:ListResolverRules",
-                "route53resolver:ListTagsForResource",
-                "route53resolver:UpdateResolverEndpoint",
-                "route53resolver:UpdateResolverRule",
-                "s3:AbortMultipartUpload",
-                "s3:CreateBucket",
-                "s3:DeleteBucket",
-                "s3:DeleteObject",
-                "s3:GetAccountPublicAccessBlock",
-                "s3:GetBucketAcl",
-                "s3:GetBucketOwnershipControls",
-                "s3:GetBucketPolicy",
-                "s3:GetBucketPolicyStatus",
-                "s3:GetBucketPublicAccessBlock",
                 "s3:GetObject",
-                "s3:GetObjectVersion",
-                "s3:GetBucketVersioning",
-                "s3:ListAccessPoints",
-                "s3:ListAccessPointsForObjectLambda",
-                "s3:ListAllMyBuckets",
-                "s3:ListBucket",
-                "s3:ListBucketMultipartUploads",
-                "s3:ListBucketVersions",
-                "s3:ListJobs",
-                "s3:ListMultipartUploadParts",
-                "s3:ListMultiRegionAccessPoints",
-                "s3:ListStorageLensConfigurations",
-                "s3:PutAccountPublicAccessBlock",
-                "s3:PutBucketAcl",
-                "s3:PutBucketPolicy",
-                "s3:PutBucketPublicAccessBlock",
-                "s3:PutObject",
-                "secretsmanager:CreateSecret",
-                "secretsmanager:DeleteSecret",
-                "secretsmanager:DescribeSecret",
-                "secretsmanager:GetSecretValue",
-                "secretsmanager:ListSecrets",
-                "secretsmanager:ListSecretVersionIds",
-                "secretsmanager:PutResourcePolicy",
-                "secretsmanager:TagResource",
-                "secretsmanager:UpdateSecret",
-                "sns:ListTopics",
-                "ssm:DescribeInstanceProperties",
-                "ssm:DescribeSessions",
-                "ssm:GetConnectionStatus",
-                "ssm:GetParameters",
-                "ssm:ListAssociations",
-                "ssm:ResumeSession",
-                "ssm:StartSession",
-                "ssm:TerminateSession"
+                "s3:PutObject"
+            ],
+            "Resource": "arn:aws:s3:::cloudforge-media-storage/*"
+        },
+        {
+            "Sid": "AllowBedrockVectorGeneration",
+            "Effect": "Allow",
+            "Action": "bedrock:InvokeModel",
+            "Resource": "*"
+        }
+    ]
+}
+```
+3. Đặt tên policy là `cloudforge-backend-policy` và tạo nó.
+4. Chuyển đến **Roles > Create role** (Service: Elastic Container Service Task). Đính kèm `cloudforge-backend-policy`.
+5. Đặt tên role: `ECS-Backend-TaskRole`.
+
+![ECS Backend Role](/images/5-Workshop/5.2-Prerequisite/iam_ecs_backend_role.png)
+
+**Role 3: ECS-Worker-TaskRole (Xử lý AI Nặng)**
+Role này cho phép worker xử lý nền không đồng bộ (asynchronous) trích xuất cảnh quay, gọi Bedrock để phân tích đa phương thức, và gọi Transcribe cho tác vụ Speech-to-Text.
+
+1. Chuyển đến **IAM > Policies > Create policy (tab JSON)**.
+2. Dán đoạn JSON sau:
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowFullS3MediaAccess",
+            "Effect": "Allow",
+            "Action": ["s3:GetObject", "s3:PutObject", "s3:ListBucket"],
+            "Resource": ["arn:aws:s3:::cloudforge-media-storage", "arn:aws:s3:::cloudforge-media-storage/*"]
+        },
+        {
+            "Sid": "AllowAIAndMLServices",
+            "Effect": "Allow",
+            "Action": [
+                "bedrock:InvokeModel",
+                "transcribe:StartTranscriptionJob",
+                "transcribe:GetTranscriptionJob"
             ],
             "Resource": "*"
         }
     ]
 }
-
 ```
+3. Đặt tên policy là `cloudforge-ai-worker-policy`. Tạo nó, sau đó đính kèm vào một role mới có tên `ECS-Worker-TaskRole`.
 
-#### Khởi tạo tài nguyên bằng CloudFormation
+![ECS Worker Role](/images/5-Workshop/5.2-Prerequisite/iam_ecs_worker_role.png)
 
-Trong lab này, chúng ta sẽ dùng N.Virginia region (us-east-1).
+**Role 4: StepFunctions-Orchestrator**
+Role này cho phép Step Functions State Machine kích hoạt ECS AI Worker và tiêu thụ (consume) tin nhắn SQS.
 
-Để chuẩn bị cho môi trường làm workshop, chúng ta deploy CloudFormation template sau (click link): [PrivateLinkWorkshop ](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/quickcreate?templateURL=https://s3.us-east-1.amazonaws.com/reinvent-endpoints-builders-session/Nested.yaml&stackName=PLCloudSetup). Để nguyên các lựa chọn mặc định.
+1. Chuyển đến **IAM > Policies > Create policy (tab JSON)**.
+2. Dán đoạn JSON sau:
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowRunECSTask",
+            "Effect": "Allow",
+            "Action": "ecs:RunTask",
+            "Resource": "arn:aws:ecs:*:*:task-definition/cloudforge-ai-worker:*"
+        },
+        {
+            "Sid": "AllowPassRoleToECS",
+            "Effect": "Allow",
+            "Action": "iam:PassRole",
+            "Resource": [
+                "arn:aws:iam::*:role/ecsTaskExecutionRole",
+                "arn:aws:iam::*:role/ECS-Worker-TaskRole"
+            ]
+        },
+        {
+            "Sid": "AllowSQSReceive",
+            "Effect": "Allow",
+            "Action": [
+                "sqs:ReceiveMessage",
+                "sqs:DeleteMessage",
+                "sqs:GetQueueAttributes"
+            ],
+            "Resource": "arn:aws:sqs:*:*:cloudforge-ingest-queue"
+        }
+    ]
+}
+```
+3. Đặt tên policy là `cloudforge-orchestrator-policy`.
+4. Tạo một role (Trusted Entity: Step Functions) có tên `StepFunctions-Orchestrator` và đính kèm policy này.
 
-![create stack](/images/5-Workshop/5.2-Prerequisite/create-stack1.png)
+![Final IAM Roles](/images/5-Workshop/5.2-Prerequisite/iam_final_roles.png)
 
-+ Lựa chọn 2 mục acknowledgement 
-+ Chọn Create stack
+#### 2. Cài đặt môi trường cục bộ (Local Environment Setup)
+Trước khi bắt đầu triển khai, hãy đảm bảo máy của bạn đã được cài đặt các công cụ sau:
 
-![create stack](/images/5-Workshop/5.2-Prerequisite/create-stack2.png)
+- **Git:** Để sao chép (clone) repository dự án.
+- **Docker:** Để build các image frontend và backend ở local trước khi đẩy lên ECR.
+- **AWS CLI:** Được cấu hình thông tin xác thực để chạy các lệnh triển khai.
 
-Quá trình triển khai CloudFormation cần khoảng 15 phút để hoàn thành.
+Kiểm tra cấu hình AWS CLI của bạn:
+```bash
+aws configure
+aws sts get-caller-identity
+```
+![AWS CLI Config](/images/5-Workshop/5.2-Prerequisite/aws_cli_config.png)
 
-![complete](/images/5-Workshop/5.2-Prerequisite/complete.png)
+#### 3. Quyền truy cập Amazon Bedrock Model (Bản cập nhật mới của AWS)
 
-+ 2 VPCs đã được tạo
+Trước đây, Amazon Bedrock yêu cầu phải kích hoạt thủ công các foundation models cụ thể. Tuy nhiên, theo bản cập nhật mới nhất của AWS, trang Model Access đã bị gỡ bỏ.
 
-![vpcs](/images/5-Workshop/5.2-Prerequisite/vpcs.png)
+Các Serverless foundation models (bao gồm **Nova Lite** và **Titan Embeddings** sử dụng trong dự án của chúng ta) hiện được **tự động kích hoạt** trên tất cả các commercial regions của AWS ngay trong lần gọi đầu tiên vào tài khoản. Do đó, bạn không cần phải thao tác thủ công trên AWS Console cho bước này nữa.
 
-+ 3 EC2s đã được tạo
-
-![EC2](/images/5-Workshop/5.2-Prerequisite/ec2.png)
+![Bedrock Model Access Auto](/images/5-Workshop/5.2-Prerequisite/bedrock_access_retired.png)
