@@ -6,9 +6,9 @@ chapter : false
 pre : " <b> 5.3. </b> "
 ---
 
-#### Internal Network Foundation (VPC)
+#### Network Foundation (VPC)
 
-In this section, we will build a secure and highly available Virtual Private Cloud (VPC) to host the Smart Media Analytics system. We will configure Public and Private Subnets, a NAT Gateway for outbound traffic, and an S3 Gateway Endpoint to optimize data transfer costs.
+In this section, we will build a secure and highly available Virtual Private Cloud (VPC) to host the Smart Media Analytics system. We will configure Public and Private Subnets, a NAT Gateway for secure outbound traffic, and an S3 Gateway Endpoint to optimize data transfer costs.
 
 #### Content
 

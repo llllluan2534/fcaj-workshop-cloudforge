@@ -1,4 +1,4 @@
----
+﻿---
 title : "Create ElastiCache (Redis)"
 date : 2026-07-10
 weight : 4
@@ -22,7 +22,7 @@ Similar to RDS, we will place this Redis cluster into the Private Subnet to ensu
 7. **Subnet ID:** *Important Note:* The system might automatically select all 4 subnets. Click the **Manage** button, **uncheck the 2 Public Subnets**, and keep only the 2 Private Subnets of our project checked.
 8. Click **Create**.
 
-![Redis Subnet Group](/images/5-Workshop/5.4-Database-setup/redis_subnet_group.png)
+![Redis Subnet Group](/images/5-Workshop/5.4-Database-setup/5.4.4-create-elasticache-redis/redis_subnet_group.png)
 
 #### 2. Provision the Redis Cluster
 Since the new AWS ElastiCache interface uses a step-by-step wizard, follow these configurations:
@@ -45,7 +45,7 @@ Since the new AWS ElastiCache interface uses a step-by-step wizard, follow these
 4. **Step 3: Review and create:**
    * Review your parameters and click **Create** at the bottom of the page. *(This process will take about 3-5 minutes).*
 
-![Redis Connectivity](/images/5-Workshop/5.4-Database-setup/redis_connectivity.png)
+![Redis Connectivity](/images/5-Workshop/5.4-Database-setup/5.4.4-create-elasticache-redis/redis_connectivity.png)
 
 #### 3. Retrieve Endpoint Information
 After the Redis cluster's status changes to **Available**, click on the name `cloudforge-redis`.
@@ -53,4 +53,4 @@ Under the **Cluster details** section, copy the URL provided in the **Primary en
 
 ***
 
-**Next Step:** The core data system is now complete. We will proceed to section **5.4.5** to consolidate all the necessary Endpoints, preparing everything to deploy the Backend source code to the Cloud.
+**Next Step:** The core data system is now complete. We will proceed to section **5.4.4** to consolidate all the necessary Endpoints, preparing everything to deploy the Backend source code to the Cloud.

@@ -1,6 +1,6 @@
 ---
 title : "VPC & Networking"
-date : 2026-07-09
+date : 2026-07-09 
 weight : 3
 chapter : false
 pre : " <b> 5.3. </b> "
@@ -12,7 +12,7 @@ Trong phần này, chúng ta sẽ xây dựng một Virtual Private Cloud (VPC) 
 
 #### Nội dung
 
-* [Tạo VPC & Subnets](5.3.1-create-vpc-subnets/)
-* [Kiểm tra NAT Gateway & Định tuyến](5.3.2-create-nat-gateway/)
-* [Phân tích S3 Gateway Endpoint](5.3.3-create-s3-gateway-endpoint/)
-* [Cấu hình Security Groups](5.3.4-security-groups/)
+- [Tạo VPC & Subnets](5.3.1-create-vpc-subnets/)
+- [Kiểm tra NAT Gateway & Định tuyến](5.3.2-create-nat-gateway/)
+- [Phân tích S3 Gateway Endpoint](5.3.3-create-s3-gateway-endpoint/)
+- [Cấu hình Security Groups](5.3.4-security-groups/)

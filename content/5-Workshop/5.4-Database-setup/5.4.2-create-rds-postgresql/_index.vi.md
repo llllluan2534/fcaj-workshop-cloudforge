@@ -1,4 +1,4 @@
----
+﻿---
 title : "Tạo RDS PostgreSQL"
 date : 2026-07-10
 weight : 2
@@ -6,49 +6,49 @@ chapter : false
 pre : " <b> 5.4.2. </b> "
 ---
 
-Amazon RDS (Relational Database Service) giúp bạn dễ dàng thiết lập, vận hành và mở rộng cơ sở dữ liệu quan hệ trên đám mây. Đối với dự án này, chúng ta sẽ sử dụng engine **PostgreSQL** vì nó hỗ trợ hoàn hảo cho extension `pgvector` – một yêu cầu cốt lõi để lưu trữ vector embeddings cho tính năng tìm kiếm ngữ nghĩa của AI.
+Amazon RDS (Relational Database Service) giúp đơn giản hóa việc thiết lập, vận hành và mở rộng quy mô cơ sở dữ liệu quan hệ trên đám mây. Trong dự án này, chúng ta sẽ sử dụng engine **PostgreSQL** vì nó hỗ trợ cực kỳ tốt cho extension `pgvector` – thành phần cốt lõi để lưu trữ vector embeddings phục vụ tính năng tìm kiếm AI ngữ nghĩa.
 
-#### 1. Tạo DB Subnet Group
-Trước khi khởi tạo cơ sở dữ liệu, RDS yêu cầu chúng ta định nghĩa một **Subnet Group** để xác định xem máy chủ cơ sở dữ liệu có thể được đặt vào các Private Subnets nào bên trong VPC của chúng ta.
+#### 1. Tạo Subnet Group cho Database
+Trước khi tạo database, RDS yêu cầu chúng ta phải định nghĩa một **Subnet Group** để xác định dải mạng nội bộ (Private Subnets) nào trong VPC được phép đặt máy chủ dữ liệu.
 
-1. Điều hướng đến **RDS Console** và chọn **Subnet groups** ở menu bên trái.
-2. Nhấp vào nút màu cam **Create DB subnet group**.
+1. Truy cập **RDS Console**, chọn **Subnet groups** ở menu bên trái.
+2. Bấm nút màu cam **Create DB subnet group**.
 3. **Name:** `cloudforge-db-subnet-group`
 4. **Description:** `Subnet group for CloudForge Databases`
 5. **VPC:** Chọn `cloudforge-vpc`.
-6. **Add subnets:** Chọn 2 Availability Zones (`ap-southeast-1a` và `ap-southeast-1b`), sau đó tích chọn 2 Private Subnets tương ứng được chỉ định cho tầng Database.
-7. Nhấp vào **Create**.
+6. **Add subnets:** Chọn 2 Availability Zones (`ap-southeast-1a` và `ap-southeast-1b`), sau đó tích chọn 2 Private Subnets tương ứng dành cho Database của dự án.
+7. Bấm **Create**.
 
-![DB Subnet Group](/images/5-Workshop/5.4-Database-setup/db_subnet_group.png)
+![DB Subnet Group](/images/5-Workshop/5.4-Database-setup/5.4.2-create-rds-postgresql/db_subnet_group.png)
 
-#### 2. Cấp phát PostgreSQL Database
-1. Chuyển sang menu **Databases** ở bên trái và nhấp vào **Create database**.
-2. Từ menu xổ xuống, nhấp vào **Full configuration** để hiển thị tất cả các cấu hình hệ thống chuyên sâu.
-3. **Engine options:** Chọn **PostgreSQL** (giữ nguyên phiên bản mặc định được hệ thống đề xuất).
+#### 2. Khởi tạo Database PostgreSQL
+1. Chuyển sang menu **Databases**, bấm nút màu cam **Create database**.
+2. Tại menu lựa chọn xổ xuống, click chọn **Full configuration** để mở toàn bộ cấu hình sâu hệ thống.
+3. **Engine options:** Chọn **PostgreSQL** (chọn phiên bản mặc định hệ thống tự chọn).
 4. **Templates & Durability:**
-   - **Templates:** Chọn **Sandbox** (hoặc *Dev/Test*) để tối đa hóa việc tiết kiệm chi phí cho môi trường workshop.
-   - **Deployment options:** Đảm bảo hệ thống mặc định chọn **Single-AZ DB instance deployment**.
+   - **Templates:** Chọn **Sandbox** (hoặc *Dev/Test*) để tối ưu chi phí tối đa cho môi trường workshop.
+   - **Deployment options:** Đảm bảo hệ thống tự chuyển về **Single-AZ DB instance deployment**.
 5. **Settings:**
-   - **DB instance identifier:** Thay đổi tên mặc định thành `cloudforge-db`.
-   - **Credentials management:** Tích chọn **Self managed** để tự quản lý mật khẩu của bạn.
+   - **DB instance identifier:** Đổi tên mặc định thành `cloudforge-db`.
+   - **Credentials management:** Tích chọn **Self managed** để tự quản lý mật khẩu.
    - **Master username:** Giữ nguyên `postgres`.
-   - **Master password / Confirm password:** Nhập một mật khẩu an toàn (ví dụ: `CloudForge2026!`).
-6. **Instance configuration & Storage:**
-   - **DB instance class:** Giữ nguyên lớp cấu hình thấp nhất được đề xuất (ví dụ: `db.t3.micro`).
-   - **Allocated storage:** Giảm giá trị mặc định lớn xuống **20 GiB** (mức tối thiểu cho phép).
-   - **Storage autoscaling:** Bỏ chọn *Enable storage autoscaling*.
-7. **Connectivity (Mạng nội bộ - Vô cùng quan trọng):**
-   - **Virtual private cloud (VPC):** Chọn `cloudforge-vpc`.
-   - **DB Subnet group:** Chọn `cloudforge-db-subnet-group` vừa tạo ở bước 1.
-   - **Public access:** Chọn **No** *(Đảm bảo cơ sở dữ liệu bị cô lập hoàn toàn khỏi Internet)*.
-   - **VPC security group:** Chọn **Choose existing** → Xóa bỏ group `default` và chỉ chọn **`cloudforge-db-redis-sg`** (Tường lửa Zero-Trust bạn đã tạo ở phần 5.3.4).
-8. Mở rộng phần **Additional configuration** ở phía dưới:
-   - **Initial database name:** Nhập `cloudforge_db` (để AWS tự động tạo sẵn một DB rỗng).
-   - **Backup:** Bỏ chọn *Enable automated backups* để tăng tốc quá trình cấp phát cho workshop.
-9. Cuộn xuống dưới cùng và nhấp vào **Create database**. *(Quá trình cấp phát thực tế thường mất khoảng 3-5 phút).*
+   - **Master password / Confirm password:** Nhập mật khẩu bảo mật của bạn (ví dụ: `CloudForge2026!`).
+6. **Instance configuration & Storage (Cấu hình phần cứng):**
+   - **DB instance class:** Giữ nguyên dòng burstable nhỏ nhất hệ thống tự gợi ý (ví dụ: `db.t3.micro`).
+   - **Allocated storage:** Giảm từ dung lượng lớn mặc định xuống còn **20 GiB** (mức tối thiểu tiết kiệm).
+   - **Storage autoscaling:** Bỏ tích chọn *Enable storage autoscaling*.
+7. **Connectivity (Kết nối mạng nội bộ - Cực kỳ quan trọng):**
+   - **Virtual private cloud (VPC):** Chọn đúng `cloudforge-vpc`.
+   - **DB Subnet group:** Chọn đúng `cloudforge-db-subnet-group` vừa tạo ở bước 1.
+   - **Public access:** Chọn **No** *(Đảm bảo Database tuyệt đối không bị phơi ra Internet)*.
+   - **VPC security group:** Chọn **Choose existing** → Xóa nhóm `default` đi và chọn duy nhất **`cloudforge-db-redis-sg`** (Tường lửa bạn vừa tạo ở bài 5.3.4).
+8. Mở rộng phần **Additional configuration** ở cuối trang:
+   - **Initial database name:** Nhập `cloudforge_db` (để tự động tạo sẵn database trống).
+   - **Backup:** Bỏ tích chọn *Enable automated backups* để rút ngắn thời gian khởi tạo trong workshop.
+9. Cuộn xuống dưới cùng và bấm **Create database**. *(Quá trình khởi tạo máy chủ thực tế mất từ 3-5 phút).*
 
-![RDS Connectivity Setup](/images/5-Workshop/5.4-Database-setup/rds_connectivity.png)
+![RDS Connectivity Setup](/images/5-Workshop/5.4-Database-setup/5.4.2-create-rds-postgresql/rds_connectivity.png)
 
 ***
 
-**Bước tiếp theo:** Trong khi chờ phiên bản RDS hoàn tất quá trình cấp phát, chúng ta sẽ chuyển sang phần **5.4.3** để kích hoạt extension `pgvector`, chuẩn bị sẵn sàng cho cơ sở dữ liệu lưu trữ các embeddings.
+**Bước tiếp theo:** Trong thời gian chờ máy chủ RDS khởi tạo hoàn tất, chúng ta sẽ chuyển sang phần **5.4.2** để kích hoạt extension `pgvector`, chuẩn bị sẵn sàng cho việc lưu trữ embeddings.
