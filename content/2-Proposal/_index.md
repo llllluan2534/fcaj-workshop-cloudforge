@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Proposal"
 date: 2026-04-17
 weight: 2
@@ -26,29 +26,27 @@ The solution significantly shortens the time required to search for footage, rea
 ### 3. Solution Architecture
 The platform employs a hybrid local-to-cloud approach. In the local phase, the media ingest workflow runs in Docker Compose. When deployed to AWS, the architecture uses a serverless and managed services model. 
 
-![SMA Architecture](/images/2-Proposal/1.SMA_architecture.png)
-![SMA Architecture](/images/2-Proposal/2.SMA_architecture.png)
+![SMA Architecture](/images/2-Proposal/SMA_architecture.png)
 
 **AWS Services Used**
-- **Networking & Delivery:** Amazon Route 53 (DNS), AWS Amplify (Frontend Hosting & CDN), Amazon VPC (Network with NAT Gateway).
-- **Security & Identity:** Amazon Cognito (User Auth), AWS Secrets Manager (Credentials).
-- **Storage & Databases:** Amazon S3 (Media Storage), Amazon RDS PostgreSQL (Metadata), Amazon ElastiCache (Caching).
-- **Compute & API:** AWS App Runner (Backend API), Amazon API Gateway (Routing), Amazon ECS Fargate (Video Processing Tasks).
-- **Artificial Intelligence (AI/ML):** Amazon Bedrock (Semantic analysis & Embeddings), Amazon Transcribe (Speech-to-Text).
-- **Integration & Orchestration:** Amazon SQS & EventBridge (Queues & Events), AWS Step Functions (Workflow orchestration).
-- **DevOps & Monitoring:** Amazon ECR (Container Registry), Amazon CloudWatch & AWS X-Ray (Logging & Tracing).
+- **1. Networking & Routing:** Amazon Route 53, AWS Amplify, Amazon API Gateway, AWS ALB (Application Load Balancer), Amazon VPC (including Internet Gateway, NAT Gateway, and S3 Gateway Endpoint).
+- **2. Compute & CI/CD:** Amazon ECS on Fargate (Divided into 2 services: Backend and AI Worker), Amazon ECR (Elastic Container Registry).
+- **3. Storage & Database:** Amazon S3, Amazon RDS (PostgreSQL), Amazon ElastiCache (Redis).
+- **4. AI & ML:** Amazon Bedrock (Nova Lite & Titan Embeddings), Amazon Transcribe.
+- **5. Orchestration & Events:** Amazon SQS, Amazon EventBridge, AWS Step Functions.
+- **6. Security & Observability:** Amazon Cognito, AWS Secrets Manager, Amazon CloudWatch, AWS X-Ray.
 
 **Component Design**
 - **Frontend Layer:** React app managed and distributed by AWS Amplify with Route 53, authenticated via Cognito.
-- **API & Routing Layer:** API Gateway routes traffic to the FastAPI service hosted on App Runner.
-- **Processing & AI Layer:** Step Functions coordinates EventBridge and SQS to trigger ECS (Fargate) tasks for scene detection, followed by Bedrock & Transcribe for AI extraction.
-- **Data Layer:** Metadata is persisted in RDS PostgreSQL, cached in ElastiCache. Vectors and media object persistence are handled directly from the processing tasks. Secured within a VPC with a NAT Gateway.
+- **API & Routing Layer:** API Gateway or ALB routes traffic to the Backend running on Amazon ECS Fargate.
+- **Processing & AI Layer:** Step Functions coordinates AI Worker (ECS Fargate) tasks for video processing, followed by Bedrock (Nova Lite & Titan) & Transcribe for AI extraction.
+- **Data Layer:** Metadata is persisted in RDS PostgreSQL, cached in ElastiCache. Secured within a VPC with a NAT Gateway and S3 Gateway Endpoint.
 
 ### 4. Technical Implementation
 **Implementation Phases**
 1. **Architectural Research:** Design the local architecture and map the data flow to the AWS services list (1 month pre-internship).
 2. **Local-first Build:** Develop and refine the core logic locally using Docker Compose, integrating Ollama and faster-whisper (Month 1).
-3. **AWS Cloud-ready Integration:** Incrementally replace local containers with AWS managed services like App Runner, Bedrock, and S3 (Month 2).
+3. **AWS Cloud-ready Integration:** Incrementally replace local containers with AWS managed services like ECS Fargate, Bedrock, and RDS (Month 2).
 4. **Develop, Test, and Deploy:** Finalize the cloud infrastructure using CI/CD, set up CloudWatch monitoring, and release to production (Month 3).
 
 **Technical Requirements**
@@ -74,7 +72,7 @@ Deploying this comprehensive production architecture with over 20 AWS services, 
 | **Amazon ElastiCache** | Cache (Multi-AZ, `cache.t4g.micro`, 2 nodes) | $32.00 |
 | **Amazon ECS (Fargate)** | Auto Scaling Task for Video Processing (~1 vCPU, 2GB RAM) | $15.00 |
 | **Amazon Bedrock & Transcribe** | AI, Speech-to-Text, Embeddings (Base estimate) | $15.00 |
-| **AWS App Runner** | Web Service / API (Minimum 1 instance) | $7.00 |
+| **AWS ALB** | Application Load Balancer routing to ECS Backend | $16.00 |
 | **Amazon CloudWatch & X-Ray** | Logs, Metrics, Alarms, Distributed Tracing | $5.00 |
 | **Amazon S3** | Media & Keyframe Storage (Est. ~50GB) | $2.00 |
 | **AWS Secrets Manager** | Keys & Credentials Management (5 secrets) | $2.00 |

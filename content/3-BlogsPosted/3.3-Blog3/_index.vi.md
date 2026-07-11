@@ -1,13 +1,10 @@
 ---
 title: "Blog 3"
 date: 2026-04-17
-weight: 1
+weight: 3
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
 # AI và Robot đang thay đổi nông nghiệp bền vững như thế nào với Amazon SageMaker AI?
 
