@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Workshop on Internship Report</title><link>https://llllluan2534.github.io/fcaj-workshop-cloudforge/5-workshop/</link><description>Recent content in Workshop on Internship Report</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 09 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://llllluan2534.github.io/fcaj-workshop-cloudforge/5-workshop/index.xml" rel="self" type="application/rss+xml"/><item><title>Architecture Overview</title><link>https://llllluan2534.github.io/fcaj-workshop-cloudforge/5-workshop/5.1-architecture-overview/</link><pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate><guid>https://llllluan2534.github.io/fcaj-workshop-cloudforge/5-workshop/5.1-architecture-overview/</guid><description>&lt;h4 id="smart-media-analytics-architecture-team-cloudforge">Smart Media Analytics Architecture (Team CloudForge)&lt;/h4>
+&lt;p>&lt;strong>Smart Media Analytics&lt;/strong> is a comprehensive video analysis solution combining the power of Generative AI with a Serverless and Event-Driven architecture on AWS. The system is designed for high scalability, capable of processing large video files, extracting intelligent metadata, and enabling Semantic Search capabilities.&lt;/p>
+&lt;p>Below is the high-level architecture diagram of the entire system:&lt;/p>
+&lt;p>&lt;img alt="Platform Architecture Overview" src="https://llllluan2534.github.io/fcaj-workshop-cloudforge/images/5-Workshop/5.1-Architecture-overview/diagram1.png">&lt;/p>
+&lt;h4 id="key-workflows">Key Workflows&lt;/h4>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Frontend &amp;amp; Authentication:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>The Web Application is hosted on &lt;strong>AWS Amplify&lt;/strong>, with &lt;strong>Route 53&lt;/strong> handling DNS routing.&lt;/li>
+&lt;li>User authentication is managed by &lt;strong>Amazon Cognito&lt;/strong>, issuing secure JWT tokens.&lt;/li>
+&lt;li>Client API requests are verified by &lt;strong>API Gateway&lt;/strong> and routed through an &lt;strong>Application Load Balancer (ALB)&lt;/strong> to the Backend API service running on &lt;strong>Amazon ECS (AWS Fargate)&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Ingestion &amp;amp; Orchestration:&lt;/strong>&lt;/p></description></item></channel></rss>
