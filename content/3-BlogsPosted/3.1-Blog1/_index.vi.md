@@ -72,7 +72,7 @@ Thực thi các truy vấn tìm kiếm đối với cluster hiện tại
 ### Bước 5 – OpenSearch trong Môi trường Bảo mật
 
 Toàn bộ OpenSearch cluster nằm trong các mạng con riêng (private subnets) của Đám mây Riêng Ảo (VPC) và không bao giờ được hiển thị trực tiếp ra internet công cộng. Điều này cung cấp một lớp bảo vệ quan trọng cho dữ liệu kinh doanh nhạy cảm.
-![Sơ đồ kiến trúc](/images/architecture.png)
+![Sơ đồ kiến trúc](/images/blog_1.png)
 
 ## Kết luận
 

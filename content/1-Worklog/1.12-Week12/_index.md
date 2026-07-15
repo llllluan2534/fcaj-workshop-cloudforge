@@ -6,50 +6,33 @@ chapter: false
 pre: " <b> 1.12. </b> "
 ---
 
-
-
 ### Week 12 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+Perform End-to-End integration and testing of the entire system on the actual Staging Cloud environment to evaluate the readiness of the architecture before launching to Production. The goal is to detect and completely resolve "hidden Cloud infrastructure" errors such as IAM Roles, CORS, VPC Network, and real hardware limits.
+
+**Target Branch:**
+`main` (Staging environment)
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br><br>- **Project - Smart Media Analysics (DevOps & Infra):** <br>&emsp; + Write Terraform Scripts to initialize core infrastructure (VPC, S3, RDS pgvector, ECR, Secrets Manager, Cognito, Route53). <br>&emsp; + Set up IAM Roles, configure App Runner VPC Connector, and define AWS Step Functions Workflow. <br>&emsp; + Setup automated GitHub Actions CI/CD for Backend and Terraform, configure CloudWatch Logs. | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br><br>- **Project - Smart Media Analysics (DevOps & QA):** <br>&emsp; + End-to-End System Validation on Staging: Test Golden Flow, IAM & Security, and S3 CORS for WaveSurfer. <br>&emsp; + Perform Failure Testing (Crash, Timeout), validate WebSocket reconnection, and conduct Cost Validation. | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | ---- | ---------- | --------------- | ------------------ |
+| 2   | - **Golden Flow Scenario Testing:** <br>&emsp; + Successfully upload a video file (> 5 minutes long) via the Staging UI. <br>&emsp; + Verify that App Runner receives the request and successfully triggers AWS Step Functions / ECS. <br>&emsp; + Verify that the WebSocket progress transmission to the Frontend is smooth and does not disconnect. <br>&emsp; + Verify that the Pipeline completes 100%. <br>- **Validate AWS IAM & Security:** <br>&emsp; + ECS Task successfully fetches the file from S3 without Access Denied errors. <br>&emsp; + App Runner successfully reads/writes to RDS. <br>&emsp; + App Runner successfully calls AWS Bedrock and SQS/Step Functions. | 07/06/2026 | 07/06/2026 | [Internal Docs](#) |
+| 3   | - **Validate Frontend WaveSurfer & S3 CORS:** <br>&emsp; + Ensure the Asset Detail page loads the `stream_url` (S3 Presigned URL). <br>&emsp; + Verify the WaveSurfer library can fetch byte-range chunks from S3 without encountering CORS Policy errors or token timeouts. | 07/07/2026 | 07/07/2026 | [Internal Docs](#) |
+| 4   | - **Test Connection Recovery & State Synchronization:** <br>&emsp; + Upload a long video, and as soon as processing reaches about 30%, completely close the browser tab. <br>&emsp; + Wait 2 minutes, then reopen the application. <br>&emsp; + Verify that the Frontend accurately recovers the state from the `ingest_jobs` array and continues tracking progress smoothly. | 07/08/2026 | 07/08/2026 | [Internal Docs](#) |
+| 5   | - **Failure Testing (Error Scenarios & Recovery):** <br>&emsp; + Simulate ECS Task crash mid-process (e.g., out of memory). <br>&emsp; + Simulate AWS Bedrock timeout / Rate Limit. <br>&emsp; + Simulate Transcribe failure. <br>&emsp; + Simulate a missing S3 file. <br>&emsp; + Verify that the Retry and Catch mechanisms of Step Functions work correctly. | 07/09/2026 | 07/09/2026 | [Internal Docs](#) |
+| 6   | - **Cost Validation & Performance Audit:** <br>&emsp; + Upload a 5-minute video and measure the actual costs generated on the AWS bill. Estimate the Cost/Video. <br>&emsp; + Check if App Runner auto-scales when flooded with requests. <br>&emsp; + Check CloudWatch Logs for any spam logs or hidden errors. | 07/10/2026 | 07/10/2026 | [Internal Docs](#) |
 
+### Week 12 Achievements (Definition of Done - DoD):
 
-### Week 12 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* ✅ A 5-minute video is successfully processed, displaying accurate Waveform, Transcript, and Scenes 100% on the Cloud.
+* ✅ Errors related to IAM Roles, S3 CORS, and VPC Network are completely resolved.
+* ✅ The system perfectly recovers its state upon closing/reopening the browser tab.
+* ✅ All error scenarios (Crash, Timeout) are properly caught and safe error alerts are sent to the UI.
+* ✅ Cost Validation report (estimated cost/video) is finalized.
+* ✅ Confirmed the entire system meets MVP Ready standards on AWS:
+  * Initialized network infrastructure, security, and database on AWS.
+  * Built an automated AI processing flow (SQS, Step Functions, Amazon Bedrock).
+  * Set up a CI/CD pipeline to automatically deploy Backend/AI Worker to ECS Fargate.
+  * Configured Load Balancer and successfully integrated the WebSocket flow.
+  * Deployed Frontend (Amplify) and set up monitoring systems (CloudWatch, X-Ray).
+  * Drafted Workshop documentation guiding the deployment of the entire project architecture.
