@@ -67,7 +67,7 @@ The Task Definition acts as an architectural blueprint detailing the hardware li
 3. **Infrastructure requirements:**
    - **Launch type:** Select **AWS Fargate**.
    - **Task size:** Specify cost-optimized resources including `0.5 vCPU` and `1 GB` Memory.
-   - **Task role:** Select the dedicated IAM Role for the Backend application (e.g., `ECS-Backend-TaskRole`) to grant the application permissions to call APIs of other AWS services.
+   - **Task role:** Select the dedicated IAM Role for the Backend application (e.g., `ECS-Backend-TaskRole`). *(Crucial Note: Ensure this IAM Role has a Policy attached that grants `s3:PutObject` and `s3:DeleteObject` permissions to your bucket. Otherwise, the upload process will fail with AccessDenied)*.
    - **Task execution role:** Select to create new or specify `ecsTaskExecutionRole` (Grants the task permissions to pull images from ECR and push logs to CloudWatch).
 4. **Container configuration:**
    - **Container name:** `backend-container`.
@@ -78,7 +78,7 @@ The Task Definition acts as an architectural blueprint detailing the hardware li
      - `AWS_DEFAULT_REGION`: `ap-southeast-1`
      - `AWS_S3_BUCKET`: `cloudforge-media-upload-ntnhan19`
      - `DATABASE_URL`: `postgresql+psycopg://postgres:<your-password>@<your-rds-endpoint>:5432/cloudforge_db`
-     - `REDIS_URL`: `redis://master.cloudforge-redis.5vjnre.apse1.cache.amazonaws.com:6379/0`
+     - `REDIS_URL`: `redis://master.cloudforge-redis...` *(Or `rediss://` if you have In-Transit Encryption enabled in ElastiCache)*
      - `STORAGE_BACKEND`: `s3`
 
 ![Task Def Environment 1](/images/5-Workshop/5.7-Compute-setup/5.7.2-deploy-ecs-backend/task_def_environment1.png)
@@ -122,4 +122,4 @@ The Service plays a coordinating role, ensuring the continuous maintenance of a 
 
 ***
 
-**Next Step:** The Backend API system has been fully deployed and can receive orchestration requests via the ALB endpoint. We will continue setting up the project's analytical "brain" component in lesson **5.7.3: Deploy ECS AI Worker** to configure the dedicated server cluster processing background tasks from the SQS queue.
+**Next Step:** The Backend API system has been fully deployed and can receive orchestration requests via the ALB endpoint. We will continue setting up the project's analytical "brain" component in lesson [**5.7.3: Deploy ECS AI Worker**](../5.7.3-deploy-ecs-ai-worker/) to configure the dedicated server cluster processing background tasks from the SQS queue.

@@ -96,10 +96,10 @@ Here, the Rolling Update mechanism will transpire autonomously and intuitively:
 - The new Tasks autonomously register into the Application Load Balancer (ALB) Target Group and execute the initial health check sequence.
 - Upon the new Tasks attaining the RUNNING and HEALTHY status, ECS systematically directs the entirety of user traffic to the novel version whilst concurrently draining and deregistering the obsolete Tasks. This assures the system sustains 100% continuous operation devoid of interruption errors.
 
-![ECS Rolling Update](/images/5-Workshop/5.12-cicd/5.12.3-ecs-deploy.png)
+![ECS Rolling Update](/images/5-Workshop/5.12-CICD/5.12.3-deploy-pipeline/5.12.3-ecs-deploy.png)
 
 ***
 
 **Chapter 5.12 Summary:** The project team has triumphantly established a CI/CD Pipeline adhering to Enterprise security paradigms. Henceforth, any modification to the Backend source code will autonomously traverse a closed loop: **Secure OIDC Authentication -> Automated Image Build & Push -> Zero-downtime Rolling Update Deployment**. The Software Development Life Cycle (SDLC) has been wholly optimized and automated.
 
-**Next Step:** The system operates flawlessly on autopilot, but how can administrators monitor system health and trace errors if an incident transpires? In the concluding chapter (**Chapter 5.13: Observability**), we will explore comprehensive application monitoring with AWS CloudWatch and AWS X-Ray.
+**Next Step:** The system operates flawlessly on autopilot, but how can administrators monitor system health and trace errors if an incident transpires? In the concluding chapter ([**Chapter 5.13: Observability**](../../5.13-Observability/)), we will explore comprehensive application monitoring with AWS CloudWatch and AWS X-Ray.
