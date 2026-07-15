@@ -19,7 +19,7 @@ In modern agriculture, using robots to identify weeds, monitor crops, or optimiz
 
 AWS and Aigen solved this problem with a cloud-native AI architecture.
 
-![Aigen Architecture](/images/blog_3.jpg)
+![Aigen Architecture](/images/3-BlogsPosted/blog_3.jpg)
 
 ### 1. How Does the Architecture Work?
 Robots collect data directly in the field, including:

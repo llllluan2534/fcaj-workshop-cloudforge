@@ -15,3 +15,6 @@ This blog explores how to automate the digitization of medical records using Ama
 
 ###  [Blog 3 - How AI and Robotics Are Transforming Sustainable Agriculture with Amazon SageMaker AI](3.3-Blog3/)
 This blog delves into the journey of Aigen, an agricultural robotics company, and how they transformed their machine learning pipeline using Amazon SageMaker AI. It highlights a cloud-native architecture that enables continuous learning for autonomous robots in the field, optimizing data labeling and model training to drive smart and sustainable farming solutions.
+
+###  [Blog 4 - Deep Dive into AWS Bedrock & Vector Embedding – What turns raw text into "Coordinates" for AI?](3.4-Blog4/)
+This blog explains the Embedding process on Amazon Bedrock and RAG architecture from a Backend Developer's perspective. It dives into the steps of Chunking data, calling the Bedrock API to convert text into Vectors, and storing and searching using Cosine Similarity in a Vector Database, along with practical implementation experiences.

@@ -16,3 +16,6 @@ Bài blog này khám phá cách tự động hóa quá trình số hóa hồ sơ
 
 ###  [Blog 3 - AI và Robot đang thay đổi nông nghiệp bền vững như thế nào với Amazon SageMaker AI?](3.3-Blog3/)
 Bài blog này đi sâu vào hành trình của Aigen, một công ty robot nông nghiệp, và cách họ chuyển đổi toàn bộ pipeline Machine Learning của mình bằng Amazon SageMaker AI. Bài viết làm nổi bật một kiến trúc cloud-native cho phép các robot tự hành liên tục học hỏi thực tế ngoài cánh đồng, tối ưu hóa quá trình gán nhãn dữ liệu và huấn luyện mô hình để thúc đẩy các giải pháp canh tác thông minh và bền vững.
+
+### [Blog 4 - Deep Dive vào AWS Bedrock & Vector Embedding – Cái gì biến văn bản thô thành "Tọa độ" cho AI?](3.4-Blog4/)
+Bài blog này giải thích chi tiết về quá trình Embedding trên Amazon Bedrock và kiến trúc RAG dưới góc nhìn của một lập trình viên Backend. Bài viết đi sâu vào các bước từ Chunking dữ liệu, gọi API Bedrock để chuyển đổi văn bản thành Vector, cho đến việc lưu trữ và tìm kiếm bằng thuật toán Cosine Similarity trong Vector Database, kèm theo những kinh nghiệm thực tế khi triển khai.

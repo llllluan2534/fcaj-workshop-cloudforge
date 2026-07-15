@@ -19,7 +19,7 @@ Trong nông nghiệp hiện đại, việc sử dụng robot để nhận diện
 
 AWS và Aigen đã giải quyết bài toán này bằng một kiến trúc AI cloud-native.
 
-![Aigen Architecture](/images/blog_3.jpg)
+![Aigen Architecture](/images/3-BlogsPosted/blog_3.jpg)
 
 ### 1. Kiến trúc hoạt động như thế nào?
 Robot sẽ thu thập dữ liệu trực tiếp ngoài cánh đồng, bao gồm:

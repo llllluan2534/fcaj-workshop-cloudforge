@@ -9,7 +9,7 @@ pre: " <b> 3.4. </b> "
 
 # Deep Dive vào AWS Bedrock & Vector Embedding – Cái gì biến văn bản thô thành "Tọa độ" cho AI?
 
-![Blog 4](/images/blog_4.jpg)
+![Blog 4](/images/3-BlogsPosted/blog_4.jpg)
 
 Chào mọi người trong cộng đồng AWS Study Group VN.
 Từ một người trước giờ chỉ quen cắm mặt vào code các luồng xử lý Backend truyền thống bằng Java hay Node.js, dạo gần đây khi bắt đầu tìm hiểu sâu hơn về Cloud AI và kiến trúc RAG (Retrieval-Augmented Generation) cũng như làm 1 dự án thật sự phải tối ưu hóa kiến trúc này, mình nhận ra một sự thật khá thú vị: AI thực chất không hề biết đọc chính xác chữ nghĩa user cung cấp !

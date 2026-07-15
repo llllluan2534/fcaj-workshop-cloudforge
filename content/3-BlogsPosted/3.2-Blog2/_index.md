@@ -18,7 +18,7 @@ AWS proposes a serverless architecture combined with AI to solve this problem.
 
 ## How does the architecture work?
 
-![Architecture](/images/blog_2.jpg)
+![Architecture](/images/3-BlogsPosted/blog_2.jpg)
 
 The entire process is triggered automatically as soon as a record is uploaded to Amazon S3.
 

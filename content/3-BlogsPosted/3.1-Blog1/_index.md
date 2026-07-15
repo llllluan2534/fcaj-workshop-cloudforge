@@ -72,7 +72,7 @@ Executing search queries against the existing cluster
 ### Step 5 – OpenSearch in a Secure Environment
 
 The entire OpenSearch cluster resides within private subnets of a Virtual Private Cloud (VPC) and is never exposed directly to the public internet. This provides a critical layer of protection for sensitive business data.
-![Sơ đồ kiến trúc](/images/3-BlogPosted/blog_1.jpg)
+![Sơ đồ kiến trúc](/images/3-BlogsPosted/blog_1.jpg)
 
 ## Conclusion
 

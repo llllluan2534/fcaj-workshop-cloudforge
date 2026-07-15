@@ -19,7 +19,7 @@ AWS đưa ra một kiến trúc serverless kết hợp AI để giải quyết b
 
 ## Kiến trúc hoạt động như thế nào?
 
-![Kiến trúc hoạt động](/images/blog_2.jpg)
+![Kiến trúc hoạt động](/images/3-BlogsPosted/blog_2.jpg)
 
 Toàn bộ quy trình được kích hoạt tự động ngay khi hồ sơ được tải lên Amazon S3.
 
